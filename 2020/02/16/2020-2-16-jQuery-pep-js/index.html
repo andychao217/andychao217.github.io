@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>jQuery.pep.js - Welcome To My Blog Space</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Andychao Blog Tech Frontend Javscript HTML,"> 
+    <meta name="description" content="Andy Chao&#39;s Tech Blog,jQuery.pepGetting StartedGetting started is simple: include jQuery, include pep, then:
+1$(&#39;.pep&#39;).p,"> 
+    <meta name="author" content="Andy Chao"> 
+    <link rel="alternative" href="atom.xml" title="Welcome To My Blog Space" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Welcome To My Blog Space</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="https://andychao217.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">jQuery.pep.js</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/JavaScript"><b>「
+                    </b>JAVASCRIPT<b> 」</b></a>
+                
+                February 16, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/02/16/2020-2-16-jQuery-pep-js/" title="jQuery.pep.js" class="">jQuery.pep.js</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    13k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    12 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/pep-js/" rel="tag">pep.js</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h1 id="jQuery-pep"><a href="#jQuery-pep" class="headerlink" title="jQuery.pep"></a>jQuery.pep</h1><h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>Getting started is simple: include jQuery, include pep, then:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.pep'</span>).pep(); <span class="comment">// yup, that simple.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Pep has many options. Here they are in their entirety, with their defaults. </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>initiate</td>
+<td><code>function(){}</code></td>
+<td>[≘ touchstart/mousedown] called when first touch / click event is triggered on the object</td>
+</tr>
+<tr>
+<td>start</td>
+<td><code>function(){}</code></td>
+<td>called when dragging starts; when <code>dx</code> or <code>dy</code> are greater than <code>startThreshold[0]</code> or <code>startThreshold[1]</code></td>
+</tr>
+<tr>
+<td>drag</td>
+<td><code>function(){}</code></td>
+<td>[≘ touchmove/mousemove] called continuously while the object is dragging</td>
+</tr>
+<tr>
+<td>stop</td>
+<td><code>function(){}</code></td>
+<td>[≘ touchend/mouseup] called when dragging stops</td>
+</tr>
+<tr>
+<td>easing</td>
+<td><code>function(){}</code></td>
+<td>called while object is easing</td>
+</tr>
+<tr>
+<td>rest</td>
+<td><code>function(){}</code></td>
+<td>called after dragging stops, and object has come to rest</td>
+</tr>
+<tr>
+<td>moveTo</td>
+<td><code>false</code></td>
+<td>custom method to override the default moveTo functionality.</td>
+</tr>
+<tr>
+<td>callIfNotStarted</td>
+<td><code>[&#39;stop&#39;, &#39;rest&#39;]</code></td>
+<td>if object has <em>not</em> moved outside of the <code>startThreshold</code>, call either the user-provided <code>stop</code> or <code>rest</code> fxn’s anyway, or call both</td>
+</tr>
+<tr>
+<td>startThreshold</td>
+<td><code>[0,0]</code></td>
+<td>how far past should the object move in the [x,y] direction before user ‘start’ function is called</td>
+</tr>
+<tr>
+<td>grid</td>
+<td><code>[0,0]</code></td>
+<td>define an [x,y] grid for the object to move along</td>
+</tr>
+<tr>
+<td>revert</td>
+<td><code>false</code></td>
+<td>revert back to initial position</td>
+</tr>
+<tr>
+<td>revertAfter</td>
+<td><code>stop</code></td>
+<td>revert after given event - <code>&#39;stop&#39;</code> or <code>&#39;ease&#39;</code></td>
+</tr>
+<tr>
+<td>revertIf</td>
+<td><code>function(){ return true; }</code></td>
+<td>return <code>false</code> / <code>true</code> from this function to conditionally revert an object</td>
+</tr>
+<tr>
+<td>droppable</td>
+<td><code>false</code></td>
+<td>CSS selector that this element can be dropped on, false to disable</td>
+</tr>
+<tr>
+<td>droppableActiveClass</td>
+<td><code>&#39;pep-dpa&#39;</code></td>
+<td>class to add to active droppable parents, default to pep-dpa (droppable parent active); inspect <code>this.activeDropRegions</code> within each function for valuable info</td>
+</tr>
+<tr>
+<td>overlapFunction</td>
+<td><code>false</code></td>
+<td>override pep’s default overlap function; takes two args: a &amp; b and returns true if they overlap</td>
+</tr>
+<tr>
+<td>cssEaseString</td>
+<td><em>cubic-bezier(0.190, 1.000, 0.220, 1.000)</em></td>
+<td>get more css ease params from [ <a href="http://matthewlein.com/ceaser/" target="_blank" rel="noopener">http://matthewlein.com/ceaser/</a> ]</td>
+</tr>
+<tr>
+<td>cssEaseDuration</td>
+<td><code>750</code></td>
+<td>how long should it take (in ms) for the object to get from stop to rest?</td>
+</tr>
+<tr>
+<td>constrainTo</td>
+<td><code>false</code></td>
+<td>constrain object to <code>&#39;window&#39;</code> or <code>&#39;parent&#39;</code> or <code>[top, right, bottom, left]</code>; works best w/ useCSSTranslation set to false</td>
+</tr>
+<tr>
+<td>axis</td>
+<td><code>null</code></td>
+<td>constrain object to either ‘x’ or ‘y’ axis</td>
+</tr>
+<tr>
+<td>debug</td>
+<td><code>false</code></td>
+<td>show debug values and events in the lower-righthand corner of page</td>
+</tr>
+<tr>
+<td>activeClass</td>
+<td><code>&#39;pep-active&#39;</code></td>
+<td>class to add to the pep element while dragging</td>
+</tr>
+<tr>
+<td>multiplier</td>
+<td><code>1</code></td>
+<td>+/- this number to modify to 1:1 ratio of finger/mouse movement to el movement</td>
+</tr>
+<tr>
+<td>velocityMultiplier</td>
+<td><code>1.9</code></td>
+<td>+/- this number to modify the springiness of the object as your release it</td>
+</tr>
+<tr>
+<td>shouldPreventDefault</td>
+<td><code>true</code></td>
+<td>in some cases, we don’t want to prevent the default mousedown/touchstart on our Pep object, your call</td>
+</tr>
+<tr>
+<td>allowDragEventPropagation</td>
+<td><code>true</code></td>
+<td>set to false to stop drag events from bubbling up through the DOM tree</td>
+</tr>
+<tr>
+<td>stopEvents</td>
+<td><code>&#39;&#39;</code></td>
+<td>space delimited set of events which programmatically cause the object to stop</td>
+</tr>
+<tr>
+<td>hardwareAccelerate</td>
+<td><code>true</code></td>
+<td>apply the CSS3 silver bullet method to accelerate the pep object: <a href="http://indiegamr.com/ios6-html-hardware-acceleration-changes-and-how-to-fix-them/" target="_blank" rel="noopener">http://indiegamr.com/ios6-html-hardware-acceleration-changes-and-how-to-fix-them/</a></td>
+</tr>
+<tr>
+<td>useCSSTranslation</td>
+<td><code>true</code></td>
+<td>use CSS transform translations as opposed to top/left</td>
+</tr>
+<tr>
+<td>disableSelect</td>
+<td><code>true</code></td>
+<td>apply <code>user-select: none</code> (CSS) to the object</td>
+</tr>
+<tr>
+<td>removeMargins</td>
+<td><code>true</code></td>
+<td>remove margins for better object placement</td>
+</tr>
+<tr>
+<td>shouldEase</td>
+<td><code>true</code></td>
+<td>disable/enable easing</td>
+</tr>
+<tr>
+<td>place</td>
+<td><code>true</code></td>
+<td>bypass pep’s object placement logic</td>
+</tr>
+<tr>
+<td>deferPlacement</td>
+<td><code>false</code></td>
+<td>defer object placement until start event occurs</td>
+</tr>
+<tr>
+<td>forceNonCSS3Movement</td>
+<td><code>false</code></td>
+<td>DO NOT USE: this is subject to come/go. Use at your own risk</td>
+</tr>
+<tr>
+<td>elementsWithInteraction</td>
+<td><code>&#39;input&#39;</code></td>
+<td>valid CSS/jQuery selector for elements within the Pep object that should allow user interaction, and thus propagate to allow movement</td>
+</tr>
+<tr>
+<td>ignoreRightClick</td>
+<td><code>true</code></td>
+<td>start event will be ignored if triggered by a right click</td>
+</tr>
+<tr>
+<td>startPos</td>
+<td><code>{ left: null, top: null }</code></td>
+<td>set the default left/top coordinate to position the object with on load</td>
+</tr>
+<tr>
+<td>useBoundingClientRect</td>
+<td><code>false</code></td>
+<td>use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect" target="_blank" rel="noopener">getBoundingClientRect()</a> to retrieve element dimensions instead of jQuery’s .outerWidth() &amp; .outerHeight() (useful when your element is scaled via CSS transforms)</td>
+</tr>
+</tbody></table>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Toggle functionality of all Pep objects on the page</span></span><br><span class="line">$.pep.toggleAll()</span><br><span class="line"></span><br><span class="line"><span class="comment">// Explicitly disable all Pep objects on the page</span></span><br><span class="line">$.pep.toggleAll(<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Explicitly enable all Pep objects on the page</span></span><br><span class="line">$.pep.toggleAll(<span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Unbind Pep completely from the object</span></span><br><span class="line"><span class="keyword">var</span> $pep = $(<span class="string">'.pep'</span>);</span><br><span class="line">$pep.pep();               <span class="comment">// bind</span></span><br><span class="line">$.pep.unbind( $pep );     <span class="comment">// unbind</span></span><br><span class="line">$pep.pep();               <span class="comment">// bind</span></span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Class-Applications"><a href="#Class-Applications" class="headerlink" title="Class Applications"></a>Class Applications</h2><p>The following classes are applied corresponding to events that are happening on the pep object:</p>
+<ul>
+<li><code>pep-active</code> – applied when initiate event is triggered; removed when ease has finished</li>
+<li><code>pep-start</code> – applied when start event is triggered; removed when stop event occurs</li>
+<li><code>pep-ease</code> – applied when stop event is triggered; removed when ease has finished</li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p><strong>Via Bower</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bower install jquery.pep</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p><strong>From CDN</strong></p>
+<p>Bleeding edge, development version:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;rawgithub.com&#x2F;briangonzalez&#x2F;jquery.pep.js&#x2F;master&#x2F;src&#x2F;jquery.pep.js</span><br></pre></td></tr></table></figure>
+
+<h2 id="A-note-on-droppable-option"><a href="#A-note-on-droppable-option" class="headerlink" title="A note on droppable option"></a>A note on <code>droppable</code> option</h2><p>There is a convenience object within the context of each function pep makes available (drag, rest, ease, etc.) called <code>activeDropRegions</code>, which is an array of jQuery objects that the pep object is currently “over”.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.pep'</span>).pep(&#123;</span><br><span class="line">  droppable:   <span class="string">'.drop-target'</span>,</span><br><span class="line">  drag: <span class="function"><span class="keyword">function</span>(<span class="params">ev, obj</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'There are '</span> + <span class="keyword">this</span>.activeDropRegions.length + <span class="string">'active drop regions.'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  revert: <span class="literal">true</span>,</span><br><span class="line">  revertIf: <span class="function"><span class="keyword">function</span>(<span class="params">ev, obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !<span class="keyword">this</span>.activeDropRegions.length;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>Checkout the examples in the <code>demos</code> folder, which cover a wide array of test cases and options. Or you can check out other examples at <a href="http://pep.briangonzalez.org/" target="_blank" rel="noopener">http://pep.briangonzalez.org/</a> (which can also be found in more detail on Codepen: <a href="http://codepen.io/briangonzalez/tag/pep-demo" target="_blank" rel="noopener">http://codepen.io/briangonzalez/tag/pep-demo</a>)</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='348a38bec2a6b352d8ff'
+        data-cs='6fbc24545422c6d20006da27c71934ec79b68c74'
+        data-r='blog-comments'
+        data-o='andychao217'
+        data-a='andychao217'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="https://www.andychao217.cn/images/profilepic.jpg" height=300 width=300></img>
+                    <p>Andy Chao</p>
+                    <span>Stay Hungry, Stay Foolish</span>
+                    <dl>
+                        <dd><a href="https://github.com/andychao217" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/andychao87" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/13017536/andy-chao?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">59 <p>Articles</p></a></li>
+                    <li><a href="/categories">20 <p>Categories</p></a></li>
+                    <li><a href="/tags">50 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery-pep"><span class="toc-number">1.</span> <span class="toc-text">jQuery.pep</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-Started"><span class="toc-number">1.1.</span> <span class="toc-text">Getting Started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-number">1.2.</span> <span class="toc-text">Usage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API"><span class="toc-number">1.3.</span> <span class="toc-text">API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Class-Applications"><span class="toc-number">1.4.</span> <span class="toc-text">Class Applications</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installation"><span class="toc-number">1.5.</span> <span class="toc-text">Installation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-note-on-droppable-option"><span class="toc-number">1.6.</span> <span class="toc-text">A note on droppable option</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples"><span class="toc-number">1.7.</span> <span class="toc-text">Examples</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Andy Chao
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+
+    
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/c++/c++.min.js"></script>
+
+
+
+
+    
+<script src="/js/busuanzi.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Stay Hungry, Stay Foolish", "求职若饥, 虚心若愚"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
