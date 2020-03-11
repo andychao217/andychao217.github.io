@@ -4,7 +4,132 @@
   
     
     <entry>
-      <title>What are `defer` and `async` attributes on a `&lt;script&gt;` tag?</title>
+      <title>Capitalizes the first letter of a string</title>
+      <link href="/2020/03/11/2020-3-11-capitalize/"/>
+      <url>/2020/03/11/2020-3-11-capitalize/</url>
+      
+        <content type="html"><![CDATA[<h3 id="capitalize"><a href="#capitalize" class="headerlink" title="capitalize"></a>capitalize</h3><p>Capitalizes the first letter of a string.</p><p>Capitalizes the fist letter of the sring and then adds it with rest of the string. Omit the <code>lower_rest</code> parameter to keep the rest of the string intact, or set it to <code>true</code> to convert to lowercase.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">capitalize</span><span class="params">(string, lower_rest=False)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> string[:<span class="number">1</span>].upper() + (string[<span class="number">1</span>:].lower() <span class="keyword">if</span> lower_rest <span class="keyword">else</span> string[<span class="number">1</span>:])</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">capitalize(<span class="string">'fooBar'</span>) <span class="comment"># 'FooBar'</span></span><br><span class="line">capitalize(<span class="string">'fooBar'</span>, <span class="literal">True</span>) <span class="comment"># 'Foobar'</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Returns the length of a string in bytes</title>
+      <link href="/2020/03/10/2020-3-10-byte_size/"/>
+      <url>/2020/03/10/2020-3-10-byte_size/</url>
+      
+        <content type="html"><![CDATA[<h3 id="byte-size"><a href="#byte-size" class="headerlink" title="byte_size"></a>byte_size</h3><p>Returns the length of a string in bytes.</p><p><code>utf-8</code> encodes a given string and find its length.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">byte_size</span><span class="params">(string)</span>:</span></span><br><span class="line">    <span class="keyword">return</span>(len(string.encode(<span class="string">'utf-8'</span>)))</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">byte_size(<span class="string">'😀'</span>) <span class="comment"># 4</span></span><br><span class="line">byte_size(<span class="string">'Hello World'</span>) <span class="comment"># 11</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Comparing and Swapping</title>
+      <link href="/2020/03/09/2020-3-9-bubble_sort/"/>
+      <url>/2020/03/09/2020-3-9-bubble_sort/</url>
+      
+        <content type="html"><![CDATA[<h3 id="bubble-sort"><a href="#bubble-sort" class="headerlink" title="bubble_sort"></a>bubble_sort</h3><p>Bubble_sort uses the technique of comparing and swapping</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(lst)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> passnum <span class="keyword">in</span> range(len(lst) - <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(passnum):</span><br><span class="line">            <span class="keyword">if</span> lst[i] &gt; lst[i + <span class="number">1</span>]:</span><br><span class="line">                temp = lst[i]</span><br><span class="line">                lst[i] = lst[i + <span class="number">1</span>]</span><br><span class="line">                lst[i + <span class="number">1</span>] = temp</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [<span class="number">54</span>,<span class="number">26</span>,<span class="number">93</span>,<span class="number">17</span>,<span class="number">77</span>,<span class="number">31</span>,<span class="number">44</span>,<span class="number">55</span>,<span class="number">20</span>]</span><br><span class="line">bubble_sort(lst)</span><br><span class="line">print(<span class="string">"sorted %s"</span> %lst) <span class="comment"># [17,20,26,31,44,54,55,77,91]</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Returns the average of two or more numbers</title>
+      <link href="/2020/03/08/2020-3-8-average/"/>
+      <url>/2020/03/08/2020-3-8-average/</url>
+      
+        <content type="html"><![CDATA[<h3 id="average"><a href="#average" class="headerlink" title="average"></a>average</h3><p>:information_source: Already implemented via <code>statistics.mean</code>. <code>statistics.mean</code> takes an array as an argument whereas this function takes variadic arguments.</p><p>Returns the average of two or more numbers.</p><p>Takes the sum of all the <code>args</code> and divides it by <code>len(args)</code>. The second argument <code>0.0</code> in sum is to handle floating point division in <code>python3</code>.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">average</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args, <span class="number">0.0</span>) / len(args)</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">average(*[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]) <span class="comment"># 2.0</span></span><br><span class="line">average(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) <span class="comment"># 2.0</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Checks a flat list for all unique values</title>
+      <link href="/2020/03/07/2020-3-7-all_unique/"/>
+      <url>/2020/03/07/2020-3-7-all_unique/</url>
+      
+        <content type="html"><![CDATA[<h3 id="all-unique"><a href="#all-unique" class="headerlink" title="all_unique"></a>all_unique</h3><p>Checks a flat list for all unique values. Returns True if list values are all unique and False if list values aren’t all unique.</p><p>This function compares the length of the list with length of the set() of the list. set() removes duplicate values from the list.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">all_unique</span><span class="params">(lst)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> len(lst) == len(set(lst))</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">y = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">all_unique(x) <span class="comment"># True</span></span><br><span class="line">all_unique(y) <span class="comment"># False</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>What are `defer` and `async` attributes on a `script` tag?</title>
       <link href="/2020/03/06/2020-3-6-async-defer-attributes/"/>
       <url>/2020/03/06/2020-3-6-async-defer-attributes/</url>
       
@@ -20,9 +145,9 @@
       
         <tags>
             
-            <tag> 基础知识 </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> 基础知识 </tag>
             
         </tags>
       
@@ -47,9 +172,9 @@
       
         <tags>
             
-            <tag> 基础知识 </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> 基础知识 </tag>
             
         </tags>
       
