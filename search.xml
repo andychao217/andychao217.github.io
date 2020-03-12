@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Capitalizes the first letter of every word in a string</title>
+      <link href="/2020/03/12/2020-3-12-capitalize_every_word/"/>
+      <url>/2020/03/12/2020-3-12-capitalize_every_word/</url>
+      
+        <content type="html"><![CDATA[<h3 id="capitalize-every-word"><a href="#capitalize-every-word" class="headerlink" title="capitalize_every_word"></a>capitalize_every_word</h3><p>Capitalizes the first letter of every word in a string.</p><p>Uses <code>str.title</code> to capitalize the first letter of every word in the string.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">capitalize_every_word</span><span class="params">(string)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> string.title()</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">capitalize_every_word(<span class="string">'hello world!'</span>) <span class="comment"># 'Hello World!'</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Capitalizes the first letter of a string</title>
       <link href="/2020/03/11/2020-3-11-capitalize/"/>
       <url>/2020/03/11/2020-3-11-capitalize/</url>
@@ -145,9 +170,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -172,9 +197,9 @@
       
         <tags>
             
-            <tag> HTML </tag>
-            
             <tag> 基础知识 </tag>
+            
+            <tag> HTML </tag>
             
         </tags>
       
@@ -226,9 +251,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -253,9 +278,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -280,9 +305,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Cookie </tag>
             
@@ -309,9 +334,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -336,9 +361,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -363,9 +388,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -390,9 +415,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -417,9 +442,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Echart </tag>
             
@@ -448,9 +473,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> HTML </tag>
             
@@ -477,9 +502,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Video </tag>
             
@@ -508,9 +533,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Video </tag>
             
@@ -564,9 +589,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> TTS </tag>
             
@@ -595,9 +620,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> iframe </tag>
             
@@ -651,9 +676,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> iframe </tag>
             
@@ -684,13 +709,13 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
             
-            <tag> iView </tag>
+            <tag> JavaScript </tag>
             
             <tag> Vue.js </tag>
+            
+            <tag> iView </tag>
             
         </tags>
       
@@ -717,9 +742,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> jQuery </tag>
             
@@ -752,9 +777,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> JSON </tag>
             
@@ -785,9 +810,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> jQuery </tag>
             
@@ -839,9 +864,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Math </tag>
             
@@ -868,9 +893,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -895,9 +920,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> 缓存 </tag>
             
@@ -926,9 +951,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> 设备类型 </tag>
             
@@ -955,9 +980,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> IE </tag>
             
@@ -984,9 +1009,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> LivePhoto </tag>
             
@@ -1013,9 +1038,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> LocalStorage </tag>
             
@@ -1160,9 +1185,9 @@
       
         <tags>
             
-            <tag> Qt </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Qt </tag>
             
         </tags>
       
@@ -1212,9 +1237,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Toastr </tag>
             
@@ -1241,9 +1266,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -1270,9 +1295,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Vue.js </tag>
             
@@ -1330,9 +1355,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> userAgent </tag>
             
@@ -1359,9 +1384,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -1388,11 +1413,11 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
+            <tag> CSS </tag>
             
             <tag> 前端 </tag>
             
-            <tag> CSS </tag>
+            <tag> JavaScript </tag>
             
             <tag> 黑暗模式 </tag>
             
@@ -1421,9 +1446,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> IE </tag>
             
@@ -1512,9 +1537,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> Url </tag>
             
@@ -1543,9 +1568,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> 小程序 </tag>
             
@@ -1574,9 +1599,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -1601,9 +1626,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> LocalStorage </tag>
             
@@ -1632,9 +1657,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> JSON </tag>
             
@@ -1692,9 +1717,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
             <tag> 百度 </tag>
             
@@ -1723,9 +1748,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> CSS </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -1808,9 +1833,9 @@
       
         <tags>
             
-            <tag> JavaScript </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
