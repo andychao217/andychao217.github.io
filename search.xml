@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>About this in Javascript</title>
+      <link href="/2020/03/13/2020-3-13-about-this-in-javascript/"/>
+      <url>/2020/03/13/2020-3-13-about-this-in-javascript/</url>
+      
+        <content type="html"><![CDATA[<blockquote><h4 id="this提供了一种优雅的方式来隐式”传递”对象引用-有助于将API设计的更加简洁且易于复用"><a href="#this提供了一种优雅的方式来隐式”传递”对象引用-有助于将API设计的更加简洁且易于复用" class="headerlink" title="this提供了一种优雅的方式来隐式”传递”对象引用, 有助于将API设计的更加简洁且易于复用"></a>this提供了一种优雅的方式来隐式”传递”对象引用, 有助于将API设计的更加简洁且易于复用</h4></blockquote><h4 id="1-What-is-”this”"><a href="#1-What-is-”this”" class="headerlink" title="1. What is *”this”* ?"></a>1. What is *”this”* ?</h4><ul><li>当函数被调用时,会创建一个活动记录(执行上下文), 这个记录包含函数在哪里被调用(调用栈),调用方式, 传入的参数等信息. this就是这个记录的一个属性.</li><li>this实际上就是在函数<em>调用时发生的绑定</em>, 它指向什么完全取决于函数<em>在哪里被调用</em></li></ul><h4 id="2-绑定规则"><a href="#2-绑定规则" class="headerlink" title="2. 绑定规则"></a>2. 绑定规则</h4><ol><li>默认绑定</li></ol><ul><li>foo()直接调用时, 只能使用默认绑定, this指向全局对象;</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">foo(); <span class="comment">//2</span></span><br></pre></td></tr></table></figure><ul><li>foo()本身使用strict mode时, 不能使用默认绑定, this为undefined;</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    "use strict"</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">foo(); <span class="comment">//TypeError: this is undefined</span></span><br></pre></td></tr></table></figure><ul><li>在strict mode下调用foo(), 不影响默认绑定</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    "use strict"</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    "use strict"</span>;</span><br><span class="line">    foo(); <span class="comment">//2</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure><ol start="2"><li>隐式绑定</li></ol><ul><li>函数引用有上下文对象时, 隐式绑定规则会将this绑定到上下文对象</li><li>对象属性引用链只在最后一层调用位置中起作用</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">    a: <span class="number">42</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    obj2: obj2</span><br><span class="line">&#125;;</span><br><span class="line">obj1.obj2.foo(); <span class="comment">//42</span></span><br></pre></td></tr></table></figure><ul><li>隐式丢失</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a:<span class="number">2</span>,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> bar = obj.foo; <span class="comment">//bar引用的是foo函数本身</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">"oops, global"</span>; <span class="comment">//全局属性</span></span><br><span class="line">bar(); <span class="comment">//"oops, global"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//bar()此时就是一个不带任何修饰的函数调用,因此使用默认绑定</span></span><br><span class="line"></span><br><span class="line">setTimeout(obj.foo, <span class="number">100</span>); <span class="comment">//"oops, global"</span></span><br><span class="line"><span class="comment">//setTimeout相当于下述代码, 会把回调函数的this强制绑定到触发事件的DOM元素上</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    function setTimeout(fn, delay)&#123;</span></span><br><span class="line"><span class="comment">        //等待delay毫秒</span></span><br><span class="line"><span class="comment">        fn(); //调用函数</span></span><br><span class="line"><span class="comment">    &#125; </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure><ol start="3"><li>显示绑定</li></ol><ul><li>使用call(…)和apply(…)强制绑定</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo.call(obj); <span class="comment">//this被硬绑定至obj</span></span><br><span class="line">&#125;;</span><br><span class="line">bar(); <span class="comment">//2</span></span><br><span class="line">setTimeout(bar, <span class="number">100</span>); <span class="comment">//2</span></span><br><span class="line">bar.call(<span class="built_in">window</span>); <span class="comment">//2 硬绑定的bar不能再修改它的this</span></span><br></pre></td></tr></table></figure><ul><li>可复用的辅助绑定函数</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bind</span>(<span class="params">fn, obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> fn.apply(obj, <span class="built_in">arguments</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">sth</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a, sth);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a + sth;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> bar = bind(foo, obj);</span><br><span class="line"><span class="keyword">var</span> b = bar(<span class="number">3</span>); <span class="comment">//2, 3</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">//5</span></span><br></pre></td></tr></table></figure><ul><li>API调用的上下文</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(el, <span class="keyword">this</span>.id);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    id: <span class="string">"awesome"</span></span><br><span class="line">&#125;;</span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].forEach(foo, obj); <span class="comment">//1 awesome 2 awesome 3 awesome</span></span><br></pre></td></tr></table></figure><ol start="4"><li>new绑定</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = <span class="keyword">new</span> foo(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(bar.a); <span class="comment">//2</span></span><br></pre></td></tr></table></figure><h4 id="3-绑定优先级"><a href="#3-绑定优先级" class="headerlink" title="3. 绑定优先级"></a>3. 绑定优先级</h4><ol><li>是否在new中调用?　        是的话, this绑定至新创建的对象</li><li>是否通过call, apply调用?  是的话, this绑定至指定的对象</li><li>是否通过上下文隐式绑定?   是的话, this绑定至新创建的对象</li><li>上述都不是的话, 严格模式下, this绑定至undefined, 否则绑定至全局对象</li></ol><h4 id="4-绑定例外"><a href="#4-绑定例外" class="headerlink" title="4. 绑定例外"></a>4. 绑定例外</h4><ul><li>被忽略的this</li></ul><p>如果把null或undefined作为this的绑定对象传入call, apply, bind, 在调用的时候会被忽略</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">2</span>;</span><br><span class="line">foo.call(<span class="literal">null</span>); <span class="comment">//2</span></span><br></pre></td></tr></table></figure><p>安全的做法</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"a:"</span> + a + <span class="string">", b:"</span> + b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//DMZ空对象</span></span><br><span class="line"><span class="keyword">var</span> ф = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br><span class="line">foo.apply(ф, [<span class="number">2</span>, <span class="number">3</span>]); <span class="comment">//a:2, b:3</span></span><br><span class="line"><span class="keyword">var</span> bar = foo.bind(ф, <span class="number">2</span>);</span><br><span class="line">bar(<span class="number">3</span>); <span class="comment">//a:2, b:3</span></span><br></pre></td></tr></table></figure><p>使用变量名ф不仅让函数更安全, 而且能提高代码可读性, 因为ф表示”我希望this是空”, 这比null含义更清晰</p><ul><li>间接引用</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">a</span>:<span class="number">3</span>, <span class="attr">foo</span>:foo &#125;;</span><br><span class="line"><span class="keyword">var</span> p = &#123; <span class="attr">a</span>:<span class="number">4</span> &#125;;</span><br><span class="line">o.foo(); <span class="comment">//3</span></span><br><span class="line">(p.foo = o.foo)(); <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//p.foo = o.foo的返回值是目标函数的引用,因此调用位置是foo()而不是p.foo()或o.foo(), 因此为默认绑定</span></span><br></pre></td></tr></table></figure><ul><li>软绑定</li></ul><p>如果给默认绑定指定一个全局对象和undefined以外的值, 可以实现和硬绑定相同的效果, 同时保留隐式绑定或者显示绑定修改this的能力</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="built_in">Function</span>.prototype.softBind) &#123;</span><br><span class="line">    <span class="built_in">Function</span>.prototype.softBind = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> fn = <span class="keyword">this</span>;</span><br><span class="line">        <span class="comment">//捕获所有curried参数</span></span><br><span class="line">        <span class="keyword">var</span> curried = [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">var</span> bound = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> fn.apply(</span><br><span class="line">                (!<span class="keyword">this</span> || <span class="keyword">this</span> === (<span class="built_in">window</span> || global)) ?</span><br><span class="line">                    obj: <span class="keyword">this</span>,</span><br><span class="line">                curried.concat.apply(curried, <span class="built_in">arguments</span>)</span><br><span class="line">            );</span><br><span class="line">        &#125;;</span><br><span class="line">        bound.prototype = <span class="built_in">Object</span>.create(fn.prototype);</span><br><span class="line">        <span class="keyword">return</span> bound;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>软绑定使用</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"name: "</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">"obj"</span>&#125;,</span><br><span class="line">    obj2 = &#123;<span class="attr">name</span>: <span class="string">"obj2"</span>&#125;,</span><br><span class="line">    obj3 = &#123;<span class="attr">name</span>: <span class="string">"obj3"</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> fooOBJ = foo.softBind(obj);</span><br><span class="line"></span><br><span class="line">fooOBJ(); <span class="comment">//name: obj</span></span><br><span class="line"></span><br><span class="line">obj2.foo = foo.softBind(obj);</span><br><span class="line">obj2.foo(); <span class="comment">//name: obj2</span></span><br><span class="line"></span><br><span class="line">fooOBJ.call(obj3); <span class="comment">//name: obj3</span></span><br><span class="line"></span><br><span class="line">setTimeout(obj2.foo, <span class="number">10</span>); <span class="comment">//name: obj &lt;-- 应用软绑定</span></span><br></pre></td></tr></table></figure><h4 id="5-箭头函数"><a href="#5-箭头函数" class="headerlink" title="5. 箭头函数"></a>5. 箭头函数</h4><p>++箭头函数不使用上述this的四种标准规则, 而是根据外层(函数或全局)作用域来决定this(无论this绑定到什么)++</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//返回箭头函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">a</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">//this继承自foo()</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">a</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">a</span>:<span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> bar = foo.cal(obj1);</span><br><span class="line">bar.call(obj2); <span class="comment">//2, 不是3!</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//foo()的this已经绑定至obj1, bar的this也绑定至obj1, 箭头函数的绑定无法修改</span></span><br></pre></td></tr></table></figure><p>箭头函数常用于回调函数中, 可以像bind(…)一样确保this绑定至指定对象上</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">//这里的this继承自foo()</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">    &#125;, <span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">2</span>&#125;;</span><br><span class="line">foo.call(obj); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Capitalizes the first letter of every word in a string</title>
       <link href="/2020/03/12/2020-3-12-capitalize_every_word/"/>
       <url>/2020/03/12/2020-3-12-capitalize_every_word/</url>
@@ -251,9 +280,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -278,9 +307,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -305,9 +334,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Cookie </tag>
             
@@ -334,9 +363,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -361,9 +390,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -388,9 +417,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -415,9 +444,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -442,9 +471,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Echart </tag>
             
@@ -473,9 +502,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> HTML </tag>
             
@@ -502,9 +531,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Video </tag>
             
@@ -533,9 +562,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Video </tag>
             
@@ -589,9 +618,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> TTS </tag>
             
@@ -620,9 +649,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> iframe </tag>
             
@@ -676,9 +705,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> iframe </tag>
             
@@ -709,13 +738,13 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
             
-            <tag> Vue.js </tag>
+            <tag> 前端 </tag>
             
             <tag> iView </tag>
+            
+            <tag> Vue.js </tag>
             
         </tags>
       
@@ -742,9 +771,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> jQuery </tag>
             
@@ -777,9 +806,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> JSON </tag>
             
@@ -810,9 +839,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> jQuery </tag>
             
@@ -864,9 +893,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Math </tag>
             
@@ -893,9 +922,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -920,9 +949,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> 缓存 </tag>
             
@@ -951,9 +980,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> 设备类型 </tag>
             
@@ -980,9 +1009,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> IE </tag>
             
@@ -1009,9 +1038,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> LivePhoto </tag>
             
@@ -1038,9 +1067,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> LocalStorage </tag>
             
@@ -1185,9 +1214,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> Qt </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
@@ -1237,9 +1266,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Toastr </tag>
             
@@ -1266,9 +1295,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -1295,9 +1324,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Vue.js </tag>
             
@@ -1355,9 +1384,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> userAgent </tag>
             
@@ -1384,9 +1413,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -1413,11 +1442,11 @@
       
         <tags>
             
-            <tag> CSS </tag>
+            <tag> JavaScript </tag>
             
             <tag> 前端 </tag>
             
-            <tag> JavaScript </tag>
+            <tag> CSS </tag>
             
             <tag> 黑暗模式 </tag>
             
@@ -1446,9 +1475,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> CSS </tag>
             
             <tag> IE </tag>
             
@@ -1537,9 +1566,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> Url </tag>
             
@@ -1568,9 +1597,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> 小程序 </tag>
             
@@ -1599,9 +1628,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -1626,9 +1655,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> LocalStorage </tag>
             
@@ -1657,9 +1686,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> JSON </tag>
             
@@ -1717,9 +1746,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
             <tag> 百度 </tag>
             
@@ -1748,9 +1777,9 @@
       
         <tags>
             
-            <tag> CSS </tag>
-            
             <tag> 前端 </tag>
+            
+            <tag> CSS </tag>
             
         </tags>
       
@@ -1833,9 +1862,9 @@
       
         <tags>
             
-            <tag> 前端 </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
             
         </tags>
       

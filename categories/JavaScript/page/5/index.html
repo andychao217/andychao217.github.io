@@ -140,35 +140,39 @@
             <a href="/categories/JavaScript"><b>「
                 </b>JAVASCRIPT<b> 」</b></a>
             
-            February 07, 2020
+            February 08, 2020
         </p>
         <h3 class="post-title animated fadeInDown">
-            <a href="/2020/02/07/2020-2-7-LivePhotosKit-JS/" title="LivePhotosKit JS" class="posttitle">LivePhotosKit JS</a></h3>
+            <a href="/2020/02/08/2020-2-8-JS-choose-folder-dir-in-IE/" title="js选择文件夹路径(IE)" class="posttitle">js选择文件夹路径(IE)</a></h3>
         
         <p class="post-count animated fadeInDown">
             
             <span>
                 <b class="iconfont icon-text2"></b> <i>Words count</i>
-                15k
+                3.6k
             </span>
             
             
             <span>
                 <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                14 mins.
+                3 mins.
             </span>
             
             
         </p>
         
         
-        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/LivePhoto/" rel="tag">LivePhoto</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/IE/" rel="tag">IE</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-            <h3 id="Play-Live-Photos-on-the-web"><a href="#Play-Live-Photos-on-the-web" class="headerlink" title="Play Live Photos on the web."></a>Play Live Photos on the web.</h3><p>Use the LivePhotosKit JS library to play Live Photos on your web pages.<br>The...</p>
+            <p>语法：==strDir=Shell.BrowseForFolder(Hwnd,Title,Options,[RootFolder])==</p>
+<hr>
+<p>参数：</p>
+<ul>
+<li>Hwnd：包含对话框的窗体句柄（handle），一...</li></ul>
             
-            <span class="read-more"><a href="/2020/02/07/2020-2-7-LivePhotosKit-JS/" title="Read article" class="posttitle">Read article</a>
+            <span class="read-more"><a href="/2020/02/08/2020-2-8-JS-choose-folder-dir-in-IE/" title="Read article" class="posttitle">Read article</a>
                 <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
@@ -189,6 +193,61 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/JavaScript">
+                  <b>「 </b>JAVASCRIPT<b> 」</b>
+                </a>
+            
+            February 08, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/02/08/2020-2-8-JS-choose-folder-dir-in-IE/" title="js选择文件夹路径(IE)" class="posttitle">js选择文件夹路径(IE)</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        3.6k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        3 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/IE/" rel="tag">IE</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>语法：==strDir=Shell.BrowseForFolder(Hwnd,Title,Options,[RootFolder])==</p>
+<hr>
+<p>参数：</p>
+<ul>
+<li>Hwnd：包含对话框的窗体句柄（handle），一般设置为0</li>
+<li>Title：将在对话框中显示的说明，为字符串</li>
+<li>Options：使用对话框的特殊方式，为长整数，一般设置为0</li>
+<li>RootFolder：（可选的），用来设置浏览的最顶层文件夹，缺省时为“桌面”，可以将其设置为一个路径或“特殊文件夹常数”</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18...</span></pre></td></tr></table></figure>
+            
+            <span class="read-more"><a href="/2020/02/08/2020-2-8-JS-choose-folder-dir-in-IE/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
 <div class="post" id="post">
     <div class="post-cover animated fadeIn" style="
             background-image:
@@ -384,55 +443,9 @@
 </div>
 
 
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/JavaScript">
-                  <b>「 </b>JAVASCRIPT<b> 」</b>
-                </a>
-            
-            January 29, 2020
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/01/29/2020-1-29-Utils-js/" title="Utils.js" class="posttitle">Utils.js</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        5.6k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        5 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createRequest</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        request = <span class="keyword">new</span> XMLHttpRequest();  <span class="comment">//Chrome, Firefox, Safari..</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (tryMS)&#123;                     <span class="comment">//IE</span></span><br><span class="line">       <span class="keyword">try</span>&#123;</span><br><span class="line">           request = <span class="keyword">new</span> ActiveXObject(<span class="string">"Msxm12.XMLHTTP"</span>);</span><br><span class="line">       &#125; <span class="keyword">catch</span> (otherMS)&#123;</span><br><span class="line">           <span class="keyword">try</span>&...</span></pre></td></tr></table></figure>
-            
-            <span class="read-more"><a href="/2020/01/29/2020-1-29-Utils-js/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
     </div>
     
-    <div id="pager"><a href="/categories/JavaScript/page/6/" class="more" data-loading="Loading..." data-load-more="Load more">Load more</a></div>
+    <div id="pager"><a href="/categories/JavaScript/page/6/" class="more" data-loading="加载中..." data-load-more="Load more">Load more</a></div>
     
 </div>
 <div id="preview"></div>
