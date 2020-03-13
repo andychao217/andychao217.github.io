@@ -140,37 +140,38 @@
             <a href="/categories/JavaScript"><b>「
                 </b>JAVASCRIPT<b> 」</b></a>
             
-            February 23, 2020
+            February 24, 2020
         </p>
         <h3 class="post-title animated fadeInDown">
-            <a href="/2020/02/23/2020-2-23-Camera-control-in-HTML/" title="HTML5拍照,摄像机功能实战" class="posttitle">HTML5拍照,摄像机功能实战</a></h3>
+            <a href="/2020/02/24/2020-2-24-Flv-js-Streaming-HTML5/" title="Flv.js视频流支持HTML5" class="posttitle">Flv.js视频流支持HTML5</a></h3>
         
         <p class="post-count animated fadeInDown">
             
             <span>
                 <b class="iconfont icon-text2"></b> <i>Words count</i>
-                12k
+                13k
             </span>
             
             
             <span>
                 <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                11 mins.
+                12 mins.
             </span>
             
             
         </p>
         
         
-        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Video/" rel="tag">Video</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Flv-js/" rel="tag">Flv.js</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Video/" rel="tag">Video</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-            <p>HTML5的getUserMedia API为用户提供访问硬件设备媒体（摄像头、视频、音频、地理位置等）的接口，基于该接口，开发者可以在不依赖任何浏览器插件的条件下访问硬件媒体设备。</p>
-<ol>
-<li>获取视频流，并...</li></ol>
+            <ul>
+<li>RTMP: 底层基于TCP，在浏览器端依赖Flash。</li>
+<li>HTTP-FLV: 基于HTTP流式IO传输FLV，依赖浏览器支持播放FLV。</li>
+<li>WebSocket-FLV: 基于WebSocket传输FLV...</li></ul>
             
-            <span class="read-more"><a href="/2020/02/23/2020-2-23-Camera-control-in-HTML/" title="Read article" class="posttitle">Read article</a>
+            <span class="read-more"><a href="/2020/02/24/2020-2-24-Flv-js-Streaming-HTML5/" title="Read article" class="posttitle">Read article</a>
                 <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
@@ -191,6 +192,60 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/JavaScript">
+                  <b>「 </b>JAVASCRIPT<b> 」</b>
+                </a>
+            
+            February 24, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/02/24/2020-2-24-Flv-js-Streaming-HTML5/" title="Flv.js视频流支持HTML5" class="posttitle">Flv.js视频流支持HTML5</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        13k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        12 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Flv-js/" rel="tag">Flv.js</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Video/" rel="tag">Video</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <ul>
+<li>RTMP: 底层基于TCP，在浏览器端依赖Flash。</li>
+<li>HTTP-FLV: 基于HTTP流式IO传输FLV，依赖浏览器支持播放FLV。</li>
+<li>WebSocket-FLV: 基于WebSocket传输FLV，依赖浏览器支持播放FLV。WebSocket建立在HTTP之上，建立WebSocket连接前还要先建立HTTP连接。</li>
+<li>HLS: Http Live Streaming，苹果提出基于HTTP的流媒体传输协议。HTML5可以直接打开播放。</li>
+<li>RTP: 基于UDP，延迟1秒，浏览器不支持。</li>
+</ul>
+<hr>
+<p>常见直播协...</p>
+            
+            <span class="read-more"><a href="/2020/02/24/2020-2-24-Flv-js-Streaming-HTML5/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
 <div class="post" id="post">
     <div class="post-cover animated fadeIn" style="
             background-image:
@@ -628,52 +683,6 @@
                 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123; </span><br><span class="line">  $.fn.extend(&#123; </span><br><span class="line">    serializeObject:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>.length&gt;<span class="number">1</span>)&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">      &#125; </span><br><span class="line">      <span class="keyword">var</span> arr=<span class="keyword">this</span>.serializeArray(); </span><br><span class="line">      <span class="keyword">var</span> obj=<span class="keyword">new</span> <span class="built_in">Object</span>; </span><br><span class="line">      $.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">k,v</span>)</span>&#123; </span><br><span class="line">        obj[v.name...</span></pre></td></tr></table></figure>
             
             <span class="read-more"><a href="/2020/02/15/2020-2-15-jQuery-JSON-to-Object/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/JavaScript">
-                  <b>「 </b>JAVASCRIPT<b> 」</b>
-                </a>
-            
-            February 14, 2020
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/02/14/2020-2-14-jQuery-get-height-x-y/" title="jQuery里面获取宽度,高度,x,y坐标" class="posttitle">jQuery里面获取宽度,高度,x,y坐标</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        4.6k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        4 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <h3 id="jQuery里面获取div区块的宽度与高度"><a href="#jQuery里面获取div区块的宽度与高度" class="headerlink" title="jQuery里面获取div区块的宽度与高度"></a>jQuery里面获取div区块的宽度与高度</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">获取宽度</span><br><span class="line">$(<span class="string">'div'</span>).width();             获取：区块的本身宽度</span><br><span class="line">$(<span class="string">'div'</span>).outerWidth();        获取：区块的宽度+padding宽度+border宽度</span><br><span class="line">$(<span class="string">'div'</span>).outerWidth(<span class="literal">true</span>);    获取：区块的宽度+padding宽度+border宽度+margin的宽度</span><br><span class="line"></span><br><span class="line">获取高度</span><br><span class="line">$(<span class="string">'div'</span>).height();            获取：区块的本身高度</span><br><span class="line">$(<span class="string">'div'</span>).outerHeight();       获取：区块的高度+padding高...</span></pre></td></tr></table></figure>
-            
-            <span class="read-more"><a href="/2020/02/14/2020-2-14-jQuery-get-height-x-y/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>

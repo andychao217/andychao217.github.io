@@ -5,13 +5,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>HTML中让表单Input等文本框为只读不可编辑的方法 - Welcome To My Blog Space</title>
+    <title>Javascript作用域 - Welcome To My Blog Space</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Andychao Blog Tech Frontend Javscript HTML,"> 
-    <meta name="description" content="Andy Chao&#39;s Tech Blog,HTML中让表单input等文本框为只读不可编辑的方法有时候，我们希望表单中的文本框是只读的，让用户不能修改其中的信息，实现的方式归纳一下，有如下几种。 
-方法1: onfocus=this.blu,"> 
+    <meta name="description" content="Andy Chao&#39;s Tech Blog,
+JavaScript 是一门编译语言, 编译就发生在执行前几微秒(甚至更短!)
+
+编译步骤:
+分词/词法分析
+解析/语法分析
+代码生成
+
+变量的赋值:12graph LRLHS:在当前作用域声明变,"> 
     <meta name="author" content="Andy Chao"> 
     <link rel="alternative" href="atom.xml" title="Welcome To My Blog Space" type="application/atom+xml"> 
     <link rel="icon" href="/img/profilepic.jpg"> 
@@ -58,7 +65,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/profilepic.jpg" alt="" data-url="https://andychao217.github.io">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">HTML中让表单Input等文本框为只读不可编辑的方法</h3>
+        <h3 class="subtitle">Javascript作用域</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -88,25 +95,25 @@
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/HTML"><b>「
-                    </b>HTML<b> 」</b></a>
+                <a href="/categories/JavaScript"><b>「
+                    </b>JAVASCRIPT<b> 」</b></a>
                 
-                February 22, 2020
+                March 13, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/02/22/2020-2-22-ReadOnly-Input-in-HTML/" title="HTML中让表单Input等文本框为只读不可编辑的方法" class="">HTML中让表单Input等文本框为只读不可编辑的方法</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/03/13/2020-3-13-scope-of-javascript/" title="Javascript作用域" class="">Javascript作用域</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    4k
+                    9.7k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    4 mins.
+                    9 mins.
                 </span>
                 
                 
@@ -119,7 +126,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
             
         </div>
     </div>
@@ -140,28 +147,69 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h2 id="HTML中让表单input等文本框为只读不可编辑的方法"><a href="#HTML中让表单input等文本框为只读不可编辑的方法" class="headerlink" title="HTML中让表单input等文本框为只读不可编辑的方法"></a>HTML中让表单input等文本框为只读不可编辑的方法</h2><p>有时候，我们希望表单中的文本框是只读的，让用户不能修改其中的信息，实现的方式归纳一下，有如下几种。 </p>
-<p>方法1: onfocus=this.blur() 当鼠标放不上就离开焦点</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"input1"</span> <span class="attr">value</span>=<span class="string">"中国"</span> <span class="attr">onfocus</span>=<span class="string">this.blur()</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>方法2:readonly</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"input1"</span> <span class="attr">value</span>=<span class="string">"中国"</span> <span class="attr">readonly</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"input1"</span> <span class="attr">value</span>=<span class="string">"中国"</span> <span class="attr">readonly</span>=<span class="string">"true"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>方法3: disabled</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"input1"</span> <span class="attr">value</span>=<span class="string">"中国"</span> <span class="attr">disabled</span>=<span class="string">"true"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>完整的例子:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"ly_qq"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">tabindex</span>=<span class="string">"2"</span></span></span><br><span class="line"><span class="tag"><span class="attr">onMouseOver</span>=<span class="string">"this.className='input_1'"</span> </span></span><br><span class="line"><span class="tag"><span class="attr">onMouseOut</span>=<span class="string">"this.className='input_2'"</span> </span></span><br><span class="line"><span class="tag"><span class="attr">value</span>=<span class="string">"123456789"</span> <span class="attr">disabled</span>=<span class="string">"true"</span>　<span class="attr">readOnly</span>=<span class="string">"true"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+            <blockquote>
+<p>JavaScript 是一门编译语言, 编译就发生在执行前几微秒(甚至更短!)</p>
+</blockquote>
+<h2 id="编译步骤"><a href="#编译步骤" class="headerlink" title="编译步骤:"></a>编译步骤:</h2><ol>
+<li>分词/词法分析</li>
+<li>解析/语法分析</li>
+<li>代码生成</li>
+</ol>
+<h2 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值:"></a>变量的赋值:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">LHS:在当前作用域声明变量--&gt;RHS:在作用域中查找该变量并赋值</span><br></pre></td></tr></table></figure>
+<p>在当前作用域无法找到某个变量时, 引擎就会在外层嵌套的作用域中继续查找, 直到找到该变量, 或者抵达最外层的作用域(即全局作用域)为止 (从内到外查找)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">foo(<span class="number">2</span>); <span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>disabled=”true” 文字会变成灰色，不可编辑。 </li>
-<li>readOnly=”true” 文字不会变色，也是不可编辑的</li>
+<li><p>RHS查询在所有作用域中都找不到变量时, 就会抛出ReferenceError</p>
+</li>
+<li><p>LHS在<em>非严格模式</em>下查找不到变量时,会在全局作用域自动创建该名称的变量</p>
+</li>
+<li><p>LHS在<em>严格模式</em>下查找不到变量时, 也会抛出ReferenceError</p>
+</li>
+<li><p>作用域查找会在找到<em>第一个<em>匹配的标识符时停止, 多层嵌套的作用域中, 同名标识符会产生”</em>遮蔽效应</em>“, 内层会遮蔽外层</p>
+</li>
+<li><p>全局变量被遮蔽时, 可用<em>window.a</em>这种方法访问</p>
+</li>
+<li><p>非全局变量被遮蔽后, 则无论如何都没法访问到</p>
+</li>
+<li><p>eval(…)可以将字符串转换为代码, 很危险!! 禁止使用!!!</p>
+</li>
+<li><p>with为重复引用同一对象中多个属性的快捷方式, 也禁止使用!!!</p>
+</li>
 </ul>
-<hr>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css屏蔽输入：<span class="tag">&lt;<span class="name">input</span> <span class="attr">style</span>=<span class="string">"ime-mode: disabled"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
+<h2 id="函数中的作用域"><a href="#函数中的作用域" class="headerlink" title="函数中的作用域"></a>函数中的作用域</h2><h3 id="函数内容私有化"><a href="#函数内容私有化" class="headerlink" title="函数内容私有化"></a>函数内容私有化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> b;</span><br><span class="line">    b = a + bar(a*<span class="number">2</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(b*<span class="number">3</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">2</span>); <span class="comment">//15</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//b和bar都无法从外部访问</span></span><br></pre></td></tr></table></figure>
+<h3 id="规避冲突"><a href="#规避冲突" class="headerlink" title="规避冲突"></a>规避冲突</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyReallyCoolLib = &#123;</span><br><span class="line">    awesome: <span class="string">"stuff"</span>,</span><br><span class="line">    foo: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;,</span><br><span class="line">    bar: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//...</span></span><br><span class="line">    &#125;,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果function是声明中的第一个词, 那么就是一个函数声明, 否则就是函数表达式</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数表达式</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>始终给函数表达式命名是一个最佳实践!!</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timeoutHandler</span>(<span class="params"></span>)</span>&#123; <span class="comment">//&lt;--有名字</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>立即执行表达式IIFE (function foo(){…})(), 第一个()将函数变为表达式, 第二个()立即执行这个函数</p>
+</blockquote>
+<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><ul>
+<li>只要声明有效, 在声明的人员位置都可以使用{…}来为let创建用于绑定的块</li>
+<li>使用let进行的声明不会在块作用域中提升, 声明的代码运行前, 声明并不存在</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(bar); <span class="comment">//ReferenceError!</span></span><br><span class="line">    <span class="keyword">let</span> bar = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>第一：disabled=”disabled”这样定义之后被禁用的 input 元素既不可用，也不可点击。</li>
-<li>第二：readonly=”readonly” 只读字段是不能修改的。不过，用户仍然可以使用 tab 键切换到该字段，还可以选中或拷贝其文本；</li>
+<li>回收垃圾</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个块中的内容完事可以自动销毁!</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> someReallyBigData = &#123;...&#125;;</span><br><span class="line">    process(someReallyBigData);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><ul>
+<li>不能修改的块级常量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">if</span> (foo) &#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">const</span> b = <span class="number">3</span>;</span><br><span class="line">    </span><br><span class="line">    a = <span class="number">3</span>; <span class="comment">//正常!</span></span><br><span class="line">    b = <span class="number">4</span>; <span class="comment">//错误!</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//3</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">//ReferenceError!</span></span><br></pre></td></tr></table></figure>
+<h2 id="提升"><a href="#提升" class="headerlink" title="提升:"></a>提升:</h2><ul>
+<li>包括变量和函数在内的所有声明都会在任何代码执行之前首先处理</li>
+<li><em>先有蛋(声明)后有鸡(赋值)</em></li>
+<li>只有声明本身会提升, 而赋值或其他运行逻辑会留在原地</li>
+<li>函数声明会提升, 但是函数表达式不会被提升</li>
+<li>函数首先被提升, 然后才是变量</li>
+<li>避免重复声明</li>
 </ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
@@ -221,7 +269,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML中让表单input等文本框为只读不可编辑的方法"><span class="toc-number">1.</span> <span class="toc-text">HTML中让表单input等文本框为只读不可编辑的方法</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编译步骤"><span class="toc-number">1.</span> <span class="toc-text">编译步骤:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量的赋值"><span class="toc-number">2.</span> <span class="toc-text">变量的赋值:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数中的作用域"><span class="toc-number">3.</span> <span class="toc-text">函数中的作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数内容私有化"><span class="toc-number">3.1.</span> <span class="toc-text">函数内容私有化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#规避冲突"><span class="toc-number">3.2.</span> <span class="toc-text">规避冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let"><span class="toc-number">3.3.</span> <span class="toc-text">let</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#const"><span class="toc-number">3.4.</span> <span class="toc-text">const</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提升"><span class="toc-number">4.</span> <span class="toc-text">提升:</span></a></li></ol>
                 </div>
             </div>
             
