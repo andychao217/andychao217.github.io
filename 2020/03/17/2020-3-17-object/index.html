@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Object in JavaScript - Welcome To My Blog Space</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Andychao Blog Tech Frontend Javscript HTML,"> 
+    <meta name="description" content="Andy Chao&#39;s Tech Blog,对象两种形式:
+声明(文字)形式
+
+1234var myObj = &amp;#123;    key: value,    //...&amp;#125;;
+
+
+构造形式
+
+12var myObj = new O,"> 
+    <meta name="author" content="Andy Chao"> 
+    <link rel="alternative" href="atom.xml" title="Welcome To My Blog Space" type="application/atom+xml"> 
+    <link rel="icon" href="/img/profilepic.jpg"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Welcome To My Blog Space</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/profilepic.jpg" alt="" data-url="https://andychao217.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Object in JavaScript</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/JavaScript"><b>「
+                    </b>JAVASCRIPT<b> 」</b></a>
+                
+                March 17, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/03/17/2020-3-17-object/" title="Object in JavaScript" class="">Object in JavaScript</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    32k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    29 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="对象两种形式"><a href="#对象两种形式" class="headerlink" title="对象两种形式:"></a>对象两种形式:</h2><ul>
+<li>声明(文字)形式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;</span><br><span class="line">    key: value,</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>构造形式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">myObj.key = value;</span><br></pre></td></tr></table></figure>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><h3 id="JavaScript基础类型"><a href="#JavaScript基础类型" class="headerlink" title="JavaScript基础类型"></a>JavaScript基础类型</h3><ol>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>null</li>
+<li>undefined</li>
+<li>object</li>
+</ol>
+<blockquote>
+<p>简单基本类型(string, number, boolean, null, undefined)本身并不是对象, 但是typeof null会返回object, 这是语言本身的一个错误</p>
+</blockquote>
+<h3 id="内置对象-JavaScript中对象子类型"><a href="#内置对象-JavaScript中对象子类型" class="headerlink" title="内置对象(JavaScript中对象子类型)"></a>内置对象(JavaScript中对象子类型)</h3><ol>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Object</li>
+<li>Function</li>
+<li>Array</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>Error</li>
+</ol>
+<blockquote>
+<p>它们实际上只是一些内置函数, 这些内置函数可以作为构造函数使用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"I am a string"</span>;</span><br><span class="line"><span class="keyword">typeof</span> str; <span class="comment">//"string";</span></span><br><span class="line">string <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">//false</span></span><br><span class="line"><span class="comment">//str原始值"I am a string"不是一个对象,只是一个字面量,而且不可变</span></span><br><span class="line"><span class="comment">//如果要对其操作,如获取长度,访问其中某个字符等,需要将其转换为String对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> strObject = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"I am a string"</span>);</span><br><span class="line"><span class="keyword">typeof</span> strObject; <span class="comment">//"object"</span></span><br><span class="line">strOject <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(strObject); <span class="comment">//[object object]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.length); <span class="comment">//13</span></span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(<span class="number">3</span>)); <span class="comment">//"m"</span></span><br><span class="line"><span class="comment">//操作时, JavaScript引擎会自动把string字面量转换为String对象</span></span><br><span class="line"><span class="comment">//同理, 使用42.359.toFixed(2)方法时,</span></span><br><span class="line"><span class="comment">//引擎会把42转换为new Number(42)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>null和undefined没有构造形式, 只有文字形式</li>
+<li>Date只有构造形式, 没有文字形式</li>
+<li>Object, Array, Function, RegExp 无论使用文字还是构造形式, 它们都是对象, 不是字面量</li>
+<li>Error很少在代码中显示创建, 一般是抛出异常时自动创建, 也可以使用new Error(…)创建</li>
+</ul>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><blockquote>
+<p>对象的内容是由一些存储在特定命名位置的值组成, 即属性. 属性的名称就像指针, 指向这些值真正的储存位置</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line">myObject.a; <span class="comment">//2</span></span><br><span class="line"><span class="comment">//"属性访问": 属性名需满足命名规范</span></span><br><span class="line"></span><br><span class="line">myObject[<span class="string">"a"</span>]; <span class="comment">//2</span></span><br><span class="line"><span class="comment">//"键访问": 支持任意UTF-8/Unicode字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果要引用名为"Super-Fun!"的属性, 就必须使用["Super-Fun!"]访问</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>对象中, 属性名永远都是字符串</li>
+<li>如果使用string以外的其他值作为属性名, 它也会首先被转换为字符串</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">myObject[<span class="literal">true</span>] = <span class="string">"foo"</span>;</span><br><span class="line">myObject[<span class="number">3</span>] = <span class="string">"bar"</span>;</span><br><span class="line">myObject[myObject] = <span class="string">"baz"</span>;</span><br><span class="line"></span><br><span class="line">myObject[<span class="string">"true"</span>]; <span class="comment">//"foo"</span></span><br><span class="line">myObject[<span class="string">"3"</span>]; <span class="comment">//"bar"</span></span><br><span class="line">myObject[<span class="string">"[object object]"</span>]; <span class="comment">//"baz"</span></span><br></pre></td></tr></table></figure>
+<h3 id="可计算属性名"><a href="#可计算属性名" class="headerlink" title="可计算属性名"></a>可计算属性名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> prefix = <span class="string">"foo"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    [prefix + <span class="string">"bar"</span>]: <span class="string">"hello"</span>,</span><br><span class="line">    [prefix + <span class="string">"baz"</span>]: <span class="string">"world"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myObject[<span class="string">"foobar"</span>]; <span class="comment">//hello</span></span><br><span class="line">myObject[<span class="string">"foobaz"</span>]; <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
+<p>数组也是对象, 可以给数组添加属性</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArray = [<span class="string">"foo"</span>, <span class="number">42</span>, <span class="string">"bar"</span>];</span><br><span class="line"></span><br><span class="line">myArray.baz = <span class="string">"baz"</span>;</span><br><span class="line">myArray.length; <span class="comment">//3</span></span><br><span class="line">myArray.baz; <span class="comment">//"baz"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//虽然给数组添加了命名属性, 但是数组的length没变化</span></span><br><span class="line"></span><br><span class="line">myArray[<span class="string">"3"</span>] = <span class="string">"bazz"</span>;</span><br><span class="line">myArray.length; <span class="comment">//4</span></span><br><span class="line">myArray[<span class="number">3</span>]; <span class="comment">//"bazz"</span></span><br><span class="line"><span class="comment">//如果添加的属性名"看起来"像一个数字, 那么它就会变成一个数值下标</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="复制对象"><a href="#复制对象" class="headerlink" title="复制对象"></a>复制对象</h3><blockquote>
+<p>对于JSON安全的对象来说, 可以用如下方法复制对象:</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newObj = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(someObj));</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>浅复制对象</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newObj = <span class="built_in">Object</span>.assign(&#123;&#125;, myObject);</span><br><span class="line"><span class="comment">//第一个参数是目标对象, 之后为一个或多个源对象</span></span><br><span class="line"></span><br><span class="line">newObj.a; <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="属性描述符"><a href="#属性描述符" class="headerlink" title="属性描述符"></a>属性描述符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(myObject, <span class="string">"a"</span>);  <span class="comment">//查看属性描述符</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        value: 2,            //属性的值</span></span><br><span class="line"><span class="comment">        writable: true,      //是否可修改属性的值</span></span><br><span class="line"><span class="comment">        configurable: true,  //属性是否可配置, 将其设置为false是单向操作,无法撤销</span></span><br><span class="line"><span class="comment">                             //configurable: false还会禁止删除此属性</span></span><br><span class="line"><span class="comment">                             //delete只是删除对象的属性操作, 不会释放内存</span></span><br><span class="line"><span class="comment">        enumerable: true     //控制属性是否会出现在对象的属性枚举中, 如 for..in</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//配置指定属性的描述符</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObject, <span class="string">"a"</span>, &#123;</span><br><span class="line">    value: <span class="number">2</span>,</span><br><span class="line">    writable: <span class="literal">false</span>,</span><br><span class="line">    configurable: <span class="literal">true</span>,</span><br><span class="line">    enumerable: <span class="literal">true</span> </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="不变性-不可变级别由低到高"><a href="#不变性-不可变级别由低到高" class="headerlink" title="不变性(不可变级别由低到高)"></a>不变性(不可变级别由低到高)</h3><ol>
+<li>对象常量(不可修改, 重定义或删除)</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">writable</span>: <span class="literal">false</span>, <span class="attr">configurable</span>: <span class="literal">false</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>禁止扩展(禁止添加新属性, 且保留已有属性)</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.preventExtensions(myObject);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>密封(禁止添加新属性, 也不可重定义或删除)</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.seal(myObject);</span><br><span class="line"><span class="comment">//preventExtensions(...) + configurable: false</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>冻结(禁止添加新属性, 也不可修改, 重定义或删除)</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.freeze(myObject);</span><br><span class="line"><span class="comment">//preventExtensions(...) + writable: false + configurable: false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Getter-Setter"><a href="#Getter-Setter" class="headerlink" title="Getter, Setter"></a>Getter, Setter</h3><blockquote>
+<p>给属性定义getter, setter时, JavaScript会忽略它们的value和writable特性, 只关心get, set, configurable和enumerable</p>
+</blockquote>
+<blockquote>
+<p>getter和setter通常是成对出现的</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;</span><br><span class="line">    <span class="keyword">get</span> a() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._a_;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span> a(val) &#123;</span><br><span class="line">        <span class="keyword">this</span>._a_ = val*<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myObj.a = <span class="number">2</span>;</span><br><span class="line">myObj.a; <span class="comment">//4</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObj, <span class="string">"b"</span>, &#123;</span><br><span class="line">   <span class="keyword">get</span>: function() &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>._a_ * <span class="number">3</span>;</span><br><span class="line">   &#125;,</span><br><span class="line">   enumerable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">myObj.b; <span class="comment">//12</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="存在性"><a href="#存在性" class="headerlink" title="存在性"></a>存在性</h3><ul>
+<li>判断属性是否存在:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">(<span class="string">"a"</span> <span class="keyword">in</span> myObj); <span class="comment">//true</span></span><br><span class="line">(<span class="string">"b"</span> <span class="keyword">in</span> myObj); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">myObject.hasOwnProperty(<span class="string">"a"</span>); <span class="comment">//true</span></span><br><span class="line">myObject.hasOwnProperty(<span class="string">"b"</span>); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.hasOwnProperty.call(myObj, <span class="string">"a"</span>); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>枚举</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObj, <span class="string">"a"</span>, &#123;</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    value: <span class="number">2</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObj, <span class="string">"b"</span>, &#123;</span><br><span class="line">    enumerable: <span class="literal">false</span>,</span><br><span class="line">    value: <span class="number">4</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性是否可枚举</span></span><br><span class="line">myObj.propertyIsEnumerable(<span class="string">"a"</span>); <span class="comment">//true</span></span><br><span class="line">myObj.propertyIsEnumerable(<span class="string">"b"</span>); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(myObj); <span class="comment">//["a"] 对象中可枚举的属性名数组</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(myObj); <span class="comment">//["a", "b"] 对象中所有属性名数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> myObj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(k, myObj[k]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//"a" 2 不可枚举的元素不参与遍历</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><blockquote>
+<p>迭代器: for…in, forEach(…), every(…), some(….)</p>
+</blockquote>
+<ul>
+<li>for…in会遍历所有可枚举属性, 但是无法直接获取属性值, 需要手动获取</li>
+<li>forEach(…)会遍历数组中所有值且<em>忽略</em>回调函数的返回值</li>
+<li>every(…)会一直运行到回调函数返回false时停止</li>
+<li>some(…)会一直运行到回调函数返回true时停止</li>
+<li>every(…)和some(…)中特殊的返回值, 类型for中的break, 会提前终止遍历</li>
+<li>遍历数组下标时采用的是数字顺序, 但遍历对象的顺序是不确定的, 而且不同的JavaScript引擎不一样, 当对顺序有要求时, 一定不要相信任何直接观察到的顺序, 它们是不可靠的</li>
+<li>数组遍历</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6中遍历数组的值还可以这样操作 for...of</span></span><br><span class="line"><span class="keyword">var</span> myArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> v <span class="keyword">of</span> myArray) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//1 2 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数组内置的@@iterator属性</span></span><br><span class="line"><span class="keyword">var</span> it = myArray[<span class="built_in">Symbol</span>.iterator](); <span class="comment">//Symbol.iterator用来获取@@iterator</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:1, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:2, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:3, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;done:true&#125;</span></span><br><span class="line"><span class="comment">//value是当前遍历的值, done表示遍历是否完成</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>普通对象没有内置@@iterator属性, 但我们可以自定义一个</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    b: <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义@@iterator属性</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObj, <span class="built_in">Symbol</span>.iterator, &#123;</span><br><span class="line">    enumerable: <span class="literal">false</span>,</span><br><span class="line">    writable: <span class="literal">false</span>,</span><br><span class="line">    configurable: <span class="literal">true</span>,</span><br><span class="line">    value: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> o = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">var</span> ks = <span class="built_in">Object</span>.keys(o);</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            next: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;</span><br><span class="line">                    value: o[ks[idx++]],</span><br><span class="line">                    done: (idx &gt; ks.length)</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法与数组相同</span></span><br><span class="line"><span class="keyword">var</span> it = myObj[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line">it.next(); <span class="comment">//&#123;value:2, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:3, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:undefined, done:true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//现在也可以使用for...of了!!</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> v <span class="keyword">of</span> myObj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//只要next()调用会返回&#123;value: ...&#125;和&#123;done: true&#125;, ES6的for...of就可以遍历它</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无限迭代器</span></span><br><span class="line"><span class="keyword">var</span> randoms = &#123;</span><br><span class="line">    [<span class="built_in">Symbol</span>.iterator]: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            next: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;<span class="attr">value</span>: <span class="built_in">Math</span>.random()&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> randoms_pool = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> n <span class="keyword">of</span> randoms) &#123;</span><br><span class="line">    randoms_pool.push(n);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//防止无限运行!</span></span><br><span class="line">    <span class="keyword">if</span> (randoms_pool.length === <span class="number">100</span>) &#123;</span><br><span class="line">       <span class="keyword">break</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='348a38bec2a6b352d8ff'
+        data-cs='6fbc24545422c6d20006da27c71934ec79b68c74'
+        data-r='blog-comments'
+        data-o='andychao217'
+        data-a='andychao217'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/profilepic.jpg" height=300 width=300></img>
+                    <p>Andy Chao</p>
+                    <span>Stay Hungry, Stay Foolish</span>
+                    <dl>
+                        <dd><a href="https://github.com/andychao217" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/andychao87" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/13017536/andy-chao?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">71 <p>Articles</p></a></li>
+                    <li><a href="/categories">21 <p>Categories</p></a></li>
+                    <li><a href="/tags">51 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象两种形式"><span class="toc-number">1.</span> <span class="toc-text">对象两种形式:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类型"><span class="toc-number">2.</span> <span class="toc-text">类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript基础类型"><span class="toc-number">2.1.</span> <span class="toc-text">JavaScript基础类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置对象-JavaScript中对象子类型"><span class="toc-number">2.2.</span> <span class="toc-text">内置对象(JavaScript中对象子类型)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容"><span class="toc-number">3.</span> <span class="toc-text">内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可计算属性名"><span class="toc-number">3.1.</span> <span class="toc-text">可计算属性名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组"><span class="toc-number">3.2.</span> <span class="toc-text">数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制对象"><span class="toc-number">3.3.</span> <span class="toc-text">复制对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性描述符"><span class="toc-number">3.4.</span> <span class="toc-text">属性描述符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不变性-不可变级别由低到高"><span class="toc-number">3.5.</span> <span class="toc-text">不变性(不可变级别由低到高)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Getter-Setter"><span class="toc-number">3.6.</span> <span class="toc-text">Getter, Setter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存在性"><span class="toc-number">3.7.</span> <span class="toc-text">存在性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历"><span class="toc-number">3.8.</span> <span class="toc-text">遍历</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Andy Chao
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+
+    
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+
+    
+<script src="/js/busuanzi.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Stay Hungry, Stay Foolish", "求职若饥, 虚心若愚"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>

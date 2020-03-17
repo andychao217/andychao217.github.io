@@ -140,22 +140,22 @@
             <a href="/categories/JavaScript"><b>「
                 </b>JAVASCRIPT<b> 」</b></a>
             
-            March 14, 2020
+            March 17, 2020
         </p>
         <h3 class="post-title animated fadeInDown">
-            <a href="/2020/03/14/2020-3-14-closure-in-javascript/" title="Closure in JavaScript" class="posttitle">Closure in JavaScript</a></h3>
+            <a href="/2020/03/17/2020-3-17-object/" title="Object in JavaScript" class="posttitle">Object in JavaScript</a></h3>
         
         <p class="post-count animated fadeInDown">
             
             <span>
                 <b class="iconfont icon-text2"></b> <i>Words count</i>
-                17k
+                32k
             </span>
             
             
             <span>
                 <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                16 mins.
+                29 mins.
             </span>
             
             
@@ -166,15 +166,17 @@
         
         <div class="md-content animated fadeIn">
             
-            <blockquote>
-<p>当函数可以记住并访问所在的词法作用域, 即使函数是在当前词法作用域之外执行, 这时就产生了<em>闭包</em></p>
-</blockquote>
-<blockquote>
-<p>JavaScript中闭包无处不在, 只需要能够识别并拥抱它.</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13...</span></pre></td></tr></table></figure>
+            <ul>
+<li>声明(文字)形式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;</span><br><span class="line">    key: value,</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>构造形式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">myObj.key...</span></pre></td></tr></table></figure>
             
-            <span class="read-more"><a href="/2020/03/14/2020-3-14-closure-in-javascript/" title="Read article" class="posttitle">Read article</a>
+            <span class="read-more"><a href="/2020/03/17/2020-3-17-object/" title="Read article" class="posttitle">Read article</a>
                 <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
@@ -195,6 +197,58 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/JavaScript">
+                  <b>「 </b>JAVASCRIPT<b> 」</b>
+                </a>
+            
+            March 14, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/14/2020-3-14-closure-in-javascript/" title="Closure in JavaScript" class="posttitle">Closure in JavaScript</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        17k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        16 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <blockquote>
+<p>当函数可以记住并访问所在的词法作用域, 即使函数是在当前词法作用域之外执行, 这时就产生了<em>闭包</em></p>
+</blockquote>
+<blockquote>
+<p>JavaScript中闭包无处不在, 只需要能够识别并拥抱它.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> bar; <span class="comment">//将bar引用的函数对象本身当作返回值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> baz = foo();</span><br><span class="line"></span><br><span class="line">baz(); <span class="comment">//2 --这就...</span></span></pre></td></tr></table></figure>
+            
+            <span class="read-more"><a href="/2020/03/14/2020-3-14-closure-in-javascript/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
 <div class="post" id="post">
     <div class="post-cover animated fadeIn" style="
             background-image:
@@ -350,52 +404,6 @@
                 <h3 id="What-are-defer-and-async-attributes-on-a-lt-script-gt-tag"><a href="#What-are-defer-and-async-attributes-on-a-lt-script-gt-tag" class="headerlink" title="What are defer and async attributes on a &lt;script&gt; tag?"></a>What are <code>defer</code> and <code>async</code> attributes on a <code>&lt;script&gt;</code> tag?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>If neither attribute is present, the script is downloaded and executed synchronously, and will halt parsing of the document until it has finished executing (default behavior). Scripts ...</p>
             
             <span class="read-more"><a href="/2020/03/06/2020-3-6-async-defer-attributes/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/基础知识">
-                  <b>「 </b>基础知识<b> 」</b>
-                </a>
-            
-            March 05, 2020
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/03/05/2020-3-5-alt-attribute/" title="What is the purpose of the &#96;alt&#96; attribute on images?" class="posttitle">What is the purpose of the &#96;alt&#96; attribute on images?</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.4k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        1 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <h3 id="What-is-the-purpose-of-the-alt-attribute-on-images"><a href="#What-is-the-purpose-of-the-alt-attribute-on-images" class="headerlink" title="What is the purpose of the alt attribute on images?"></a>What is the purpose of the <code>alt</code> attribute on images?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>The <code>alt</code> attribute provides alternative information for an image if a user cannot view it. The <code>alt</code> attribute should be used to describe any images except those which only serve a decorative purposes...</p>
-            
-            <span class="read-more"><a href="/2020/03/05/2020-3-5-alt-attribute/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>

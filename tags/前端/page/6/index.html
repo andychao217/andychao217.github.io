@@ -140,36 +140,37 @@
             <a href="/categories/JavaScript"><b>「
                 </b>JAVASCRIPT<b> 」</b></a>
             
-            February 09, 2020
+            February 10, 2020
         </p>
         <h3 class="post-title animated fadeInDown">
-            <a href="/2020/02/09/2020-2-9-JS-check-device-type/" title="JS自动判断设备, 浏览器等" class="posttitle">JS自动判断设备, 浏览器等</a></h3>
+            <a href="/2020/02/10/2020-2-10-JS-cache-clean/" title="JS清除浏览器缓存的几种方法" class="posttitle">JS清除浏览器缓存的几种方法</a></h3>
         
         <p class="post-count animated fadeInDown">
             
             <span>
                 <b class="iconfont icon-text2"></b> <i>Words count</i>
-                8k
+                12k
             </span>
             
             
             <span>
                 <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                7 mins.
+                11 mins.
             </span>
             
             
         </p>
         
         
-        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E8%AE%BE%E5%A4%87%E7%B1%BB%E5%9E%8B/" rel="tag">设备类型</a></li></ul>
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Cache/" rel="tag">Cache</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="regexp">/android|adr/gi</span>.test(ua)) &#123;</span><br><span class="line">    <span class="comment">// 安卓</span></span><br><span class="line">     </span><br><span class="line">&...</span></pre></td></tr></table></figure>
+            <p>css和js带参数（形如.css?t=与.js?t=）<br>使用参数有两种可能： </p>
+<ul>
+<li>第一、脚本并不存在，而是服务端动态生成的，因此带了个版本号，以示区别。 即上面代码对于文件来说 等价于 但浏览器会认为他...</li></ul>
             
-            <span class="read-more"><a href="/2020/02/09/2020-2-9-JS-check-device-type/" title="Read article" class="posttitle">Read article</a>
+            <span class="read-more"><a href="/2020/02/10/2020-2-10-JS-cache-clean/" title="Read article" class="posttitle">Read article</a>
                 <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
@@ -190,6 +191,57 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/JavaScript">
+                  <b>「 </b>JAVASCRIPT<b> 」</b>
+                </a>
+            
+            February 10, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/02/10/2020-2-10-JS-cache-clean/" title="JS清除浏览器缓存的几种方法" class="posttitle">JS清除浏览器缓存的几种方法</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        12k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        11 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Cache/" rel="tag">Cache</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>css和js带参数（形如.css?t=与.js?t=）<br>使用参数有两种可能： </p>
+<ul>
+<li>第一、脚本并不存在，而是服务端动态生成的，因此带了个版本号，以示区别。 即上面代码对于文件来说 等价于 但浏览器会认为他是 该文件的某个版本！ </li>
+<li>第二、客户端会缓存这些css或js文件，因此每次升级了js或css文件后，改变版本号，客户端浏览器就会重新下载新的js或css文件 ，刷性缓存的作用。 </li>
+</ul>
+<p>第二种情况最多，也可能两种同时存在。<br>版本号，可以是一个随机数，也可以是一个递增的值，大版本小版本的方式，或者根据脚本的...</p>
+            
+            <span class="read-more"><a href="/2020/02/10/2020-2-10-JS-cache-clean/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
 <div class="post" id="post">
     <div class="post-cover animated fadeIn" style="
             background-image:
@@ -383,52 +435,6 @@
 <li>sessionStorage和localStorage...</li></ul>
             
             <span class="read-more"><a href="/2020/02/06/2020-2-6-LocalStorage-and-SessionStorage/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/JavaScript">
-                  <b>「 </b>JAVASCRIPT<b> 」</b>
-                </a>
-            
-            January 30, 2020
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/01/30/2020-1-30-Toastr-options/" title="Toastr options" class="posttitle">Toastr options</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        2.5k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        2 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Toastr/" rel="tag">Toastr</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">toastr.options = &#123;</span><br><span class="line">	<span class="string">"closeButton"</span>: <span class="literal">true</span>,</span><br><span class="line">	<span class="string">"debug"</span>: <span class="literal">false</span>,</span><br><span class="line">	<span class="string">"newestOnTop"</span>: <span class="literal">true</span>,</span><br><span class="line">	<span class="string">"progressBar"</span>: <span class="literal">false</span>,</span><br><span class="line">	<span class="string">"rtl"</span>: <span class="literal">false</span>,</span><br><span class="line">	<span class="string">"positionClass"</span>: <span class="string">"toast-top-center"</span>,</span><br><span class="line">	<span class="string">"preventDuplicates"</span>: <span class="literal">true</span>,</span><br><span class="line">	<span class="string">"onclick"</span>: <span class="literal">null</span>,</span><br><span class="line">	<span class="string">"showDuration"</span>: <span class="number">100</span>,</span><br><span class="line">	<span class="string">"hideDuration...</span></span></pre></td></tr></table></figure>
-            
-            <span class="read-more"><a href="/2020/01/30/2020-1-30-Toastr-options/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
