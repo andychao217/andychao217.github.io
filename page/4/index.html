@@ -137,38 +137,39 @@
     <div id="post0" class="else">
         <p class="animated fadeInDown">
             
-            <a href="/categories/JavaScript"><b>「
-                </b>JAVASCRIPT<b> 」</b></a>
+            <a href="/categories/Database"><b>「
+                </b>DATABASE<b> 」</b></a>
             
-            February 18, 2020
+            February 19, 2020
         </p>
         <h3 class="post-title animated fadeInDown">
-            <a href="/2020/02/18/2020-2-18-iframe-width-bug-in-ios/" title="iOS设备上iframe的宽度会扩大的解决办法" class="posttitle">iOS设备上iframe的宽度会扩大的解决办法</a></h3>
+            <a href="/2020/02/19/2020-2-19-IndexedDB/" title="IndexedDB" class="posttitle">IndexedDB</a></h3>
         
         <p class="post-count animated fadeInDown">
             
             <span>
                 <b class="iconfont icon-text2"></b> <i>Words count</i>
-                2.4k
+                14k
             </span>
             
             
             <span>
                 <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                2 mins.
+                13 mins.
             </span>
             
             
         </p>
         
         
-        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/iOS/" rel="tag">iOS</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/iframe/" rel="tag">iframe</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/IndexedDB/" rel="tag">IndexedDB</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-            <h5 id="解决办法，就是在iframe加载完成后，设置-iframe里面body的宽度为多少PX。"><a href="#解决办法，就是在iframe加载完成后，设置-iframe里面body的宽度为多少PX。" class="headerlink" title="解决办法，就是在iframe加载完成后，设置 iframe里面body的宽度为多少PX。"></a>解决办法，就是在iframe加载完成后，设置 iframe里面body的宽度为多少PX。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#iframe1"</span>)[<span class="number">0</span>].onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    iosIframeWidthBug...</span></pre></td></tr></table></figure>
+            <p>随着浏览器的功能不断增强，越来越多的网站开始考虑，将大量数据储存在客户端，这样可以减少从服务器获取数据，直接从本地获取数据。</p>
+<p>现有的浏览器数据储存方案，都不适合储存大量数据：Cookie 的大小不超过...</p>
             
-            <span class="read-more"><a href="/2020/02/18/2020-2-18-iframe-width-bug-in-ios/" title="Read article" class="posttitle">Read article</a>
+            <span class="read-more"><a href="/2020/02/19/2020-2-19-IndexedDB/" title="Read article" class="posttitle">Read article</a>
                 <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
@@ -189,6 +190,54 @@
 
     <div id="primary">
         
+<div class="post" id="post">
+    <div class="post-cover animated fadeIn" style="
+            background-image:
+            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+            url(/img/welcome-cover.jpg);">
+    </div>
+    <div class="else">
+        <p class="animated fadeInDown">
+            
+                <a href="/categories/Database">
+                  <b>「 </b>DATABASE<b> 」</b>
+                </a>
+            
+            February 19, 2020
+        </p>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/02/19/2020-2-19-IndexedDB/" title="IndexedDB" class="posttitle">IndexedDB</a></h3>
+        
+            <p class="post-count animated fadeInDown">
+                
+                    <span>
+                        <b class="iconfont icon-text2"></b> <i>Words count</i>
+                        14k
+                    </span>
+                
+                
+                    <span>
+                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                        13 mins.
+                    </span>
+                
+                
+            </p>
+            
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/IndexedDB/" rel="tag">IndexedDB</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+            
+        
+        <div class="md-content animated fadeIn">
+            
+                <p>随着浏览器的功能不断增强，越来越多的网站开始考虑，将大量数据储存在客户端，这样可以减少从服务器获取数据，直接从本地获取数据。</p>
+<p>现有的浏览器数据储存方案，都不适合储存大量数据：Cookie 的大小不超过 4KB，且每次请求都会发送回服务器；LocalStorage 在 2.5MB 到 10MB 之间（各家浏览器不同），而且不提供搜索功能，不能建立自定义的索引。所以，需要一种新的解决方案，这就是 IndexedDB 诞生的背景。</p>
+<p>通俗地说，IndexedDB 就是浏览器提供的本地数据库，它可以被网页...</p>
+            
+            <span class="read-more"><a href="/2020/02/19/2020-2-19-IndexedDB/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+        </div>
+    </div>
+</div>
+
+
 <div class="post" id="post">
     <div class="post-cover animated fadeIn" style="
             background-image:
@@ -647,57 +696,9 @@
 </div>
 
 
-<div class="post" id="post">
-    <div class="post-cover animated fadeIn" style="
-            background-image:
-            radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
-            url(/img/welcome-cover.jpg);">
-    </div>
-    <div class="else">
-        <p class="animated fadeInDown">
-            
-                <a href="/categories/JavaScript">
-                  <b>「 </b>JAVASCRIPT<b> 」</b>
-                </a>
-            
-            February 09, 2020
-        </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/02/09/2020-2-9-JS-check-device-type/" title="JS自动判断设备, 浏览器等" class="posttitle">JS自动判断设备, 浏览器等</a></h3>
-        
-            <p class="post-count animated fadeInDown">
-                
-                    <span>
-                        <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        8k
-                    </span>
-                
-                
-                    <span>
-                        <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        7 mins.
-                    </span>
-                
-                
-            </p>
-            
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E8%AE%BE%E5%A4%87%E7%B1%BB%E5%9E%8B/" rel="tag">设备类型</a></li></ul>
-            
-        
-        <div class="md-content animated fadeIn">
-            
-                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ua = navigator.userAgent.toLowerCase();</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="regexp">/android|adr/gi</span>.test(ua)) &#123;</span><br><span class="line">    <span class="comment">// 安卓</span></span><br><span class="line">     </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/gi</span>.test(ua))&#123;</span><br><span class="line">    <span class="comment">//苹果</span></span><br><span class="line">     </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="regexp">/iPad/gi</span>.test(ua))&#123;</span><br><span class="line">    <span class="comment">//ipad</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20...</span></pre></td></tr></table></figure>
-            
-            <span class="read-more"><a href="/2020/02/09/2020-2-9-JS-check-device-type/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
-        </div>
-    </div>
-</div>
-
-
     </div>
     
-    <div id="pager"><a href="/page/5/" class="more" data-loading="Loading..." data-load-more="Load more">Load more</a></div>
+    <div id="pager"><a href="/page/5/" class="more" data-loading="加载中..." data-load-more="Load more">Load more</a></div>
     
 </div>
 <div id="preview"></div>
