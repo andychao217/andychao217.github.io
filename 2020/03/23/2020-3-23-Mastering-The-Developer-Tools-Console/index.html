@@ -1,0 +1,638 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mastering The Developer Tools Console - Welcome To My Blog Space</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Andychao Blog Tech Frontend Javscript HTML,"> 
+    <meta name="description" content="Andy Chao&#39;s Tech Blog,The developer tools console is one of the most powerful tools available to you when it comes to deb,"> 
+    <meta name="author" content="Andy Chao"> 
+    <link rel="alternative" href="atom.xml" title="Welcome To My Blog Space" type="application/atom+xml"> 
+    <link rel="icon" href="/img/profilepic.jpg"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Welcome To My Blog Space</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/profilepic.jpg" alt="" data-url="https://andychao217.github.io">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Mastering The Developer Tools Console</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg) ">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/JavaScript"><b>「
+                    </b>JAVASCRIPT<b> 」</b></a>
+                
+                March 23, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/03/23/2020-3-23-Mastering-The-Developer-Tools-Console/" title="Mastering The Developer Tools Console" class="">Mastering The Developer Tools Console</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>Words count</i>
+                    30k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
+                    27 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>Read count</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Debug/" rel="tag">Debug</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <p>The developer tools console is one of the most powerful tools available to you when it comes to debugging your front-end web applications. The console has an API that provides a number of methods that make debugging easier. It’s not uncommon to see developers using <code>console.log()</code> or <code>console.dir()</code> to investigate problems; but the developer tools console has a lot more to offer.</p>
+<p>In this blog post you’re going to learn how to debug your web applications using the methods provided by the <code>console</code> API. Some browsers support more functionality than others so I’ll be pointing out any compatibility issues as we go.</p>
+<p>Lets get started!</p>
+<h3 id="Using-the-Developer-Tools-Console"><a href="#Using-the-Developer-Tools-Console" class="headerlink" title="Using the Developer Tools Console"></a>Using the Developer Tools Console</h3><p>If you haven’t used the developer tools console before, don’t worry. In this section I’m going to show you how to access and use the console. If you’re already familiar this, feel free to skip to the next section.</p>
+<p>There are a number of different ways that you can open your browser’s developer tools. The simplest is to just right-click somewhere on the page and then select ‘Inspect Element’ in the context-menu that appears.</p>
+<p>You can also launch the developer tools using a keyboard shortcut. The shortcut for most browsers on Mac is <code>Alt</code> + <code>Command</code> + <code>I</code>, for Windows you can use <code>Ctrl</code> + <code>Shift</code> + <code>I</code>.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/dev-tools-console.png" alt="The developer tools console in Chrome."></p>
+<p>The developer tools console in Chrome.</p>
+<p>Once you have the developer tools open you can switch to the console by clicking the Console tab at the top of the window.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/dev-tools-icon.png" alt="The ‘Elements’ tab with a console pane at the bottom."></p>
+<p>The ‘Elements’ tab with a console pane at the bottom.</p>
+<p>In Chrome, you can also launch a console below any of the other tabs by clicking on the console icon in the top right of the developer tools window.</p>
+<hr>
+<p><strong>Note</strong>: In this article we will be using the default developer tools that ship with browsers. There are many great browser extensions that can provide similar tools. Firefox users may wish to install Firebug, as the Firebug console supports some methods that the default Firefox console does not.</p>
+<hr>
+<p>Now that you’ve got the console open, lets execute a simple statement.</p>
+<p>Type the following into the console and press Enter:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hello World!'</span>);</span><br></pre></td></tr></table></figure>
+<p>You should see that the test <em>Hello World!</em> is printed in the console (as shown below).</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-log-hello-world.png" alt="Using console.log() in the Chrome Dev Tools Console."></p>
+<p>Using console.log() in the Chrome Dev Tools Console.</p>
+<p>Great! Now that you’re up-to-speed with how to use the <code>console</code>, lets take a look at all the <code>console</code> methods that you can use to debug your applications.</p>
+<h3 id="console-log-object-object-…"><a href="#console-log-object-object-…" class="headerlink" title="console.log(object [, object, …])"></a>console.log(object [, object, …])</h3><p>Lets start by looking at one of the most commonly used console methods, <code>console.log()</code>. This method simply outputs an object to the <code>console</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hello Treehouse'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>If you list multiple objects they will be concatenated into a single, space-delimited string, which is then output to the console.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'This is a string'</span>, &#123; <span class="attr">foo</span>: <span class="string">'bar'</span> &#125;, &#123; <span class="attr">bar</span>: <span class="string">'foo'</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-log-multi-object.png" alt="Using console.log() with multiple objects."></p>
+<p>Using console.log() with multiple objects.</p>
+<p>The first parameter can contain format specifiers that allow you to define the format and positioning, of the subsequent objects.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">11</span> * <span class="number">9</span>;</span><br><span class="line"><span class="keyword">var</span> color = <span class="string">'red'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'%d %s balloons'</span>, number, color);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-log-format-specifiers.png" alt="Using console.log() with format specifiers."></p>
+<p>Using console.log() with format specifiers.</p>
+<p>The following format specifiers are supported in the dev tools console.</p>
+<table>
+<thead>
+<tr>
+<th>FORMAT SPECIFIER</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>String</td>
+</tr>
+<tr>
+<td>%d or %i</td>
+<td>Interger</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>Floating point value</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>Expandable DOM element (as displayed in the ‘Elements’ tab of the dev tools)</td>
+</tr>
+<tr>
+<td>%O</td>
+<td>Expandable JavaScript object</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>Formats the output using the CSS style you provide</td>
+</tr>
+</tbody></table>
+<p>Using the <code>%c</code> format specifier allows you to style the console output.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'%cThis text is styled!'</span>, <span class="string">'color: #86CC00; background-color: blue; font-size: 20px; padding: 3px;'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-log-styled.png" alt="Using console.log() with styled output."></p>
+<p>Using console.log() with styled output.</p>
+<h3 id="console-assert-expression-object"><a href="#console-assert-expression-object" class="headerlink" title="console.assert(expression, object)"></a>console.assert(expression, object)</h3><p>The <em>console.assert()</em> method takes two parameters, a boolean expression, and an object. If the result of the expression is <code>false</code> the object will be printed in the console.</p>
+<p>You will usually want to use a string object as the second parameter but the method will work with any valid JavaScript object.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.assert(count &gt; <span class="number">10</span>, <span class="string">'count is not larger than 10'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>The expression here checks to see if the count variable is larger than 10. If it’s not, the message ‘count is not larger than 10’ is printed in the console.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-assert.png" alt="Using console.assert()"></p>
+<p>Using console.assert()</p>
+<h3 id="console-clear"><a href="#console-clear" class="headerlink" title="console.clear()"></a>console.clear()</h3><p>The <code>console.clear()</code> method clears any output in the console window.</p>
+<hr>
+<p><strong>Note</strong>: This method is not supported by the default Firefox developer tools, but is supported in the Firebug console.</p>
+<hr>
+<h3 id="console-count-label"><a href="#console-count-label" class="headerlink" title="console.count(label)"></a>console.count(label)</h3><p>The <code>onsole.count()</code> method will output the number of times that the <code>count()</code> method has been called. You will only get an accurate count if this method is called at the same line, with the same label each time.</p>
+<p>This method can be useful for finding out how many times a function is being called in your code.</p>
+<hr>
+<p><strong>ProTip!</strong> You can enter multi-line expressions in the console by using <em>Shift + Enter</em> to create a new line.</p>
+<hr>
+<p>You can test that this works by using a for loop in the console.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clickHandler</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.count(<span class="string">'Click handler called'</span>);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    clickHandler();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This code will call the clickHandler() method three times.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-count.png" alt="Using console.count() to count function calls."></p>
+<p>Using console.count() to count function calls.</p>
+<hr>
+<p><strong>Note</strong>: This method is not supported by the default Firefox developer tools. Instead use the Firebug console.</p>
+<hr>
+<h3 id="console-dir-object"><a href="#console-dir-object" class="headerlink" title="console.dir(object)"></a>console.dir(object)</h3><p>The <code>console.dir()</code> method will print a JavaScript representation of the supplied object to the console. This method is especially useful for examining HTML elements, as it will display the DOM representation of the element rather than the XML representation displayed when using <code>console.log()</code>*.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.dir(<span class="built_in">document</span>.body);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-dir.png" alt="Using console.dir() to examine an HTML element."></p>
+<p>Using console.dir() to examine an HTML element.</p>
+<h3 id="console-dirxml-object"><a href="#console-dirxml-object" class="headerlink" title="console.dirxml(object)"></a>console.dirxml(object)</h3><p>The <code>console.dirxml()</code> method prints the XML representation of on a object.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.dirxml(<span class="built_in">document</span>.body);</span><br></pre></td></tr></table></figure>
+
+<p>When used with a HTML element, the output is equivalent to using <code>console.log()</code>.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-dirxml.png" alt="Using console.dirxml()"></p>
+<p>Using console.dirxml()</p>
+<hr>
+<p><strong>Note</strong>: This method is not supported by the default Firefox developer tools. Instead use the Firebug console.</p>
+<hr>
+<h3 id="console-error-object-object-…"><a href="#console-error-object-object-…" class="headerlink" title="console.error(object [, object, …])"></a>console.error(object [, object, …])</h3><p>The <code>console.error()</code> method takes one or more objects and prints them to the console. This method is similar to <code>console.log()</code> however <code>console.error()</code> will also print a stack trace from where the method was called. The output will also be flagged as an error in the console.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.error(<span class="string">'Page not found (404)'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>This method is really useful when writing error handlers.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-error.png" alt="Logging console errors with console.error()"></p>
+<p>Logging console errors with console.error()</p>
+<h3 id="console-group-object-object-…-amp-console-groupEnd"><a href="#console-group-object-object-…-amp-console-groupEnd" class="headerlink" title="console.group(object[, object, …]) &amp; console.groupEnd()"></a>console.group(object[, object, …]) &amp; console.groupEnd()</h3><p>The <code>console.group()</code> method is used to group together a series of log messages. Once this method is called, any further log messages will be added to the group until <code>onsole.groupEnd()</code> is executed to close the group.</p>
+<p>You can specify an optional title to make it easier to find the group in the console.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.group(<span class="string">'Fetching Data'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-group.png" alt="Grouping console messages with console.group()"></p>
+<p>Grouping console messages with console.group()</p>
+<p>It is possible to nest multiple groups within one another.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.group(<span class="string">'Group One'</span>);</span><br><span class="line"><span class="built_in">console</span>.group(<span class="string">'Group Two'</span>);</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.groupEnd(); <span class="comment">// Close group two</span></span><br><span class="line"><span class="built_in">console</span>.groupEnd(); <span class="comment">// Close group one</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="console-groupCollapsed-object-object-…"><a href="#console-groupCollapsed-object-object-…" class="headerlink" title="console.groupCollapsed(object[, object, …])"></a>console.groupCollapsed(object[, object, …])</h3><p>The <code>console.groupCollapsed()</code> method is essentially the same as <code>console.group()</code> except that the group is initially displayed collapsed rather than open in the console.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.groupCollapsed(<span class="string">'Fetching Data'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Request Sent'</span>);</span><br><span class="line"><span class="built_in">console</span>.error(<span class="string">'Error: Server not responding (500)'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.groupEnd();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Continuing...'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-group-collapsed.png" alt="Grouping log messages with console.groupCollapsed()"></p>
+<p>Grouping log messages with console.groupCollapsed()</p>
+<h3 id="console-info-object-object-…"><a href="#console-info-object-object-…" class="headerlink" title="console.info(object [, object, …])"></a>console.info(object [, object, …])</h3><p>The <code>console.info()</code> method functions in the same way as <code>console.log()</code> with the exception that log messages are given the info flag. This can be handy as the developer tools console has a feature that allows you to filter log messages using flags.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.info(<span class="string">'Hello Treehouse'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Note the blue info icon to the left of the log message in the image below.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-info.png" alt="Logging info messages with console.info()"></p>
+<p>Logging info messages with console.info()</p>
+<h3 id="console-profile-profile-amp-console-profileEnd"><a href="#console-profile-profile-amp-console-profileEnd" class="headerlink" title="console.profile([profile]) &amp; console.profileEnd()"></a>console.profile([profile]) &amp; console.profileEnd()</h3><p>The <code>console.profile()</code> method will start a new JavaScript CPU profile if the developer tools are open. You have the option to specify a label for the profile if you wish.</p>
+<p>The <code>console.profileEnd()</code> method will complete the profile.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">animationUI</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.profile(<span class="string">'Animating'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Animate something...</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.profileEnd();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This example shows how you might use the <code>profile()</code> method to create a new CPU profile for the <code>animateUI()</code> function.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-profile.png" alt="Creating a JavaScript CPU Profile with console.profile()"></p>
+<p>Creating a JavaScript CPU Profile with console.profile()</p>
+<h3 id="console-table-data"><a href="#console-table-data" class="headerlink" title="console.table(data)"></a>console.table(data)</h3><p>The <code>console.table()</code> method allows you to output structured data as an interactive table in the console.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [</span><br><span class="line">    &#123;<span class="attr">first_name</span>: <span class="string">'Matt'</span>, <span class="attr">last_name</span>: <span class="string">'West'</span>, <span class="attr">occupation</span>: <span class="string">'Programmer'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">first_name</span>: <span class="string">'Vince'</span>, <span class="attr">last_name</span>: <span class="string">'Vaughn'</span>, <span class="attr">occupation</span>: <span class="string">'Actor'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">first_name</span>: <span class="string">'Larry'</span>, <span class="attr">last_name</span>: <span class="string">'Page'</span>, <span class="attr">occupation</span>: <span class="string">'CEO'</span>&#125;  </span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.table(data);</span><br></pre></td></tr></table></figure>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-table.png" alt="Creating interactive tables with console.table()"></p>
+<p>Creating interactive tables with console.table()</p>
+<p>This method can be really handy for examining data returned by an AJAX call.</p>
+<hr>
+<p><strong>Note</strong>: This method is not supported by the default Firefox developer tools. Instead use the Firebug console.</p>
+<hr>
+<h3 id="console-time-label-amp-console-timeEnd-label"><a href="#console-time-label-amp-console-timeEnd-label" class="headerlink" title="console.time(label) &amp; console.timeEnd(label)"></a>console.time(label) &amp; console.timeEnd(label)</h3><p>The <code>console.time()</code> and <code>console.timeEnd()</code> methods give you a way of timing how long it takes for a piece of code to execute. Both the <code>time()</code> and <code>timeEnd()</code> methods should be passed the same label parameter.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'Draw frame'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Execute some code...</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'Draw frame'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-time.png" alt="Timing code execution with console.time()"></p>
+<p>Timing code execution with console.time()</p>
+<h3 id="console-timeline-label-amp-console-timelineEnd-label"><a href="#console-timeline-label-amp-console-timelineEnd-label" class="headerlink" title="console.timeline(label) &amp; console.timelineEnd(label)"></a>console.timeline(label) &amp; console.timelineEnd(label)</h3><p>The <code>console.timeline()</code> and <code>console.timelineEnd()</code> methods allow you to make a new timeline recording in the Chrome developer tools.</p>
+<p>You have the option to specify a label for the new timeline. As with <code>console.time()</code>, this label must be the same in the calls to <code>console.timeline()</code> and <code>console.timelineEnd()</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.timeline(<span class="string">'Google Search'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Do some work.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.timelineEnd(<span class="string">'Google Search'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-timeline.png" alt="Creating timelines in Chrome with console.timeline()"></p>
+<p>Creating timelines in Chrome with console.timeline()</p>
+<hr>
+<p><strong>Note</strong>: The timeline methods are only available in the Chrome developer tools.</p>
+<hr>
+<h3 id="console-timeStamp-label"><a href="#console-timeStamp-label" class="headerlink" title="console.timeStamp(label)"></a>console.timeStamp(label)</h3><p>You can manually add events to the timeline using the <code>console.timeStamp()</code> method. This method can be passed a label to help you identify the marker in the developer tools.</p>
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-timestamp.png" alt="Creating timeline markers with console.timeStamp()"></p>
+<p>Creating timeline markers with console.timeStamp()</p>
+<hr>
+<p><strong>Note</strong>: This method is only supported in Chrome. It was previously called <code>console.markTimeline()</code>.</p>
+<hr>
+<h3 id="console-trace"><a href="#console-trace" class="headerlink" title="console.trace()"></a>console.trace()</h3><p>The <code>console.trace()</code> method will print a stack trace for the point at which the method was called.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.trace();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-trace.png" alt="Using console.trace() to print a stack trace."></p>
+<p>Using console.trace() to print a stack trace.</p>
+<h3 id="console-warn-object-object-…"><a href="#console-warn-object-object-…" class="headerlink" title="console.warn(object [, object, …])"></a>console.warn(object [, object, …])</h3><p>Finally, the <code>console.warn()</code> method will log a message to the console with a warning flag.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.warn(‘This is a warning.’);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/console-warn.png" alt="Logging warning messages with console.warn()"></p>
+<p>Logging warning messages with console.warn()</p>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>In this post you’ve learned about the various <code>console</code> methods that you can use to debug your web applications. You’ll find that you use some of these methods more than others, but it’s certainly useful to understand what can be achieved through the developer tools console.</p>
+<p>I recommend that you check out some of the links in the <em>Further Reading</em> section below, especially <a href="https://developers.google.com/chrome-developer-tools/docs/tips-and-tricks" target="_blank" rel="noopener">dev tools tips and tricks</a> from the <strong>Google Developers</strong> website.</p>
+<p>What tools do you like to use when debugging your front-end web applications? Share your favorites in the comments below.</p>
+<h3 id="Further-Reading"><a href="#Further-Reading" class="headerlink" title="Further Reading"></a>Further Reading</h3><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/console" target="_blank" rel="noopener">MDN: Console Documentation</a></li>
+<li><a href="https://developers.google.com/chrome-developer-tools/docs/console-api" target="_blank" rel="noopener">Google Developers: Console API Reference</a></li>
+<li><a href="https://developers.google.com/chrome-developer-tools/docs/tips-and-tricks" target="_blank" rel="noopener">Google Developers: Dev Tools Tips and Tricks</a></li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='348a38bec2a6b352d8ff'
+        data-cs='6fbc24545422c6d20006da27c71934ec79b68c74'
+        data-r='blog-comments'
+        data-o='andychao217'
+        data-a='andychao217'
+        data-d=''
+    >Comments</div>
+
+
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/profilepic.jpg" height=300 width=300></img>
+                    <p>Andy Chao</p>
+                    <span>Stay Hungry, Stay Foolish</span>
+                    <dl>
+                        <dd><a href="https://github.com/andychao217" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://twitter.com/andychao87" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="https://stackoverflow.com/users/13017536/andy-chao?tab=profile" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">79 <p>Articles</p></a></li>
+                    <li><a href="/categories">24 <p>Categories</p></a></li>
+                    <li><a href="/tags">54 <p>Tags</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>Contents</h4>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-the-Developer-Tools-Console"><span class="toc-number">1.</span> <span class="toc-text">Using the Developer Tools Console</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-log-object-object-…"><span class="toc-number">2.</span> <span class="toc-text">console.log(object [, object, …])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-assert-expression-object"><span class="toc-number">3.</span> <span class="toc-text">console.assert(expression, object)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-clear"><span class="toc-number">4.</span> <span class="toc-text">console.clear()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-count-label"><span class="toc-number">5.</span> <span class="toc-text">console.count(label)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-dir-object"><span class="toc-number">6.</span> <span class="toc-text">console.dir(object)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-dirxml-object"><span class="toc-number">7.</span> <span class="toc-text">console.dirxml(object)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-error-object-object-…"><span class="toc-number">8.</span> <span class="toc-text">console.error(object [, object, …])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-group-object-object-…-amp-console-groupEnd"><span class="toc-number">9.</span> <span class="toc-text">console.group(object[, object, …]) &amp; console.groupEnd()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-groupCollapsed-object-object-…"><span class="toc-number">10.</span> <span class="toc-text">console.groupCollapsed(object[, object, …])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-info-object-object-…"><span class="toc-number">11.</span> <span class="toc-text">console.info(object [, object, …])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-profile-profile-amp-console-profileEnd"><span class="toc-number">12.</span> <span class="toc-text">console.profile([profile]) &amp; console.profileEnd()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-table-data"><span class="toc-number">13.</span> <span class="toc-text">console.table(data)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-time-label-amp-console-timeEnd-label"><span class="toc-number">14.</span> <span class="toc-text">console.time(label) &amp; console.timeEnd(label)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-timeline-label-amp-console-timelineEnd-label"><span class="toc-number">15.</span> <span class="toc-text">console.timeline(label) &amp; console.timelineEnd(label)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-timeStamp-label"><span class="toc-number">16.</span> <span class="toc-text">console.timeStamp(label)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-trace"><span class="toc-number">17.</span> <span class="toc-text">console.trace()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#console-warn-object-object-…"><span class="toc-number">18.</span> <span class="toc-text">console.warn(object [, object, …])</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Summary"><span class="toc-number">19.</span> <span class="toc-text">Summary</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Further-Reading"><span class="toc-number">20.</span> <span class="toc-text">Further Reading</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Andy Chao
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+
+    
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+
+    
+<script src="/js/busuanzi.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Stay Hungry, Stay Foolish", "求职若饥, 虚心若愚"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
