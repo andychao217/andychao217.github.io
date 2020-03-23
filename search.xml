@@ -4,6 +4,209 @@
   
     
     <entry>
+      <title>Returns a function that always returns the given value.</title>
+      <link href="/2020/03/23/2020-3-23-always/"/>
+      <url>/2020/03/23/2020-3-23-always/</url>
+      
+        <content type="html"><![CDATA[<h3 id="always"><a href="#always" class="headerlink" title="always"></a>always</h3><blockquote><figure class="highlight plain"><figcaption><span>→ (* → a)```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Returns a function that always returns the given value. Note that for non-primitives the value returned is a reference to the original value.</span><br><span class="line"></span><br><span class="line">This function is known as const, constant, or &#96;K (for K combinator)&#96; in other languages and libraries.</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">const t &#x3D; R.always(&#39;Tee&#39;);</span><br><span class="line"></span><br><span class="line">t(); &#x2F;&#x2F;&#x3D;&gt; &#39;Tee&#39; </span><br></pre></td></tr></table></figure></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+          <category> Ramda </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Ramda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Returns true for a given list of arguments if every one of the provided predicates is satisfied by those arguments</title>
+      <link href="/2020/03/22/2020-3-22-allPass/"/>
+      <url>/2020/03/22/2020-3-22-allPass/</url>
+      
+        <content type="html"><![CDATA[<h3 id="allPass"><a href="#allPass" class="headerlink" title="allPass"></a>allPass</h3><blockquote><figure class="highlight plain"><figcaption><span>→ Boolean)] → (*… → Boolean)```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Takes a list of predicates and returns a predicate that returns true for a given list of arguments if every one of the provided predicates is satisfied by those arguments.</span><br><span class="line"></span><br><span class="line">The function returned is a curried function whose arity matches that of the highest-arity predicate.</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">const isQueen &#x3D; R.propEq(&#39;rank&#39;, &#39;Q&#39;);</span><br><span class="line">const isSpade &#x3D; R.propEq(&#39;suit&#39;, &#39;♠︎&#39;);</span><br><span class="line">const isQueenOfSpades &#x3D; R.allPass([isQueen, isSpade]);</span><br><span class="line"></span><br><span class="line">isQueenOfSpades(&#123;rank: &#39;Q&#39;, suit: &#39;♣︎&#39;&#125;); &#x2F;&#x2F;&#x3D;&gt; false</span><br><span class="line">isQueenOfSpades(&#123;rank: &#39;Q&#39;, suit: &#39;♠︎&#39;&#125;); &#x2F;&#x2F;&#x3D;&gt; true </span><br></pre></td></tr></table></figure></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+          <category> Ramda </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Ramda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Returns true if all elements of the list match the predicate, false if there are any that don&#39;t</title>
+      <link href="/2020/03/21/2020-3-21-all/"/>
+      <url>/2020/03/21/2020-3-21-all/</url>
+      
+        <content type="html"><![CDATA[<h3 id="all"><a href="#all" class="headerlink" title="all"></a>all</h3><blockquote><figure class="highlight plain"><figcaption><span>→ Boolean) → [a] → Boolean```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Returns &#96;true&#96; if all elements of the list match the predicate, &#96;false&#96; if there are any that don&#39;t.</span><br><span class="line"></span><br><span class="line">Dispatches to the all method of the second argument, if present.</span><br><span class="line"></span><br><span class="line">Acts as a transducer if a transformer is given in list position.</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">const equals3 &#x3D; R.equals(3);</span><br><span class="line"></span><br><span class="line">R.all(equals3)([3, 3, 3, 3]); &#x2F;&#x2F;&#x3D;&gt; true</span><br><span class="line">R.all(equals3)([3, 3, 1, 3]); &#x2F;&#x2F;&#x3D;&gt; false </span><br></pre></td></tr></table></figure></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+          <category> Ramda </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Ramda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Adjust the value at the given index of an array</title>
+      <link href="/2020/03/20/2020-3-20-adjust/"/>
+      <url>/2020/03/20/2020-3-20-adjust/</url>
+      
+        <content type="html"><![CDATA[<h3 id="adjust"><a href="#adjust" class="headerlink" title="adjust"></a>adjust</h3><blockquote><figure class="highlight plain"><figcaption><span>→ (a → a) → [a] → [a]```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Applies a function to the value at the given index of an array, returning a new copy of the array with the element at the given index replaced with the result of the function application.</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">R.adjust(1, R.toUpper, [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]);   &#x2F;&#x2F;&#x3D;&gt; [&#39;a&#39;, &#39;B&#39;, &#39;c&#39;, &#39;d&#39;]</span><br><span class="line">R.adjust(-1, R.toUpper, [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]);  &#x2F;&#x2F;&#x3D;&gt; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;D&#39;] </span><br></pre></td></tr></table></figure></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+          <category> Ramda </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Ramda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Creates a new list iteration function from an existing one by adding two new parameters to its callback function</title>
+      <link href="/2020/03/19/2020-3-19-add-Index/"/>
+      <url>/2020/03/19/2020-3-19-add-Index/</url>
+      
+        <content type="html"><![CDATA[<h3 id="addIndex"><a href="#addIndex" class="headerlink" title="addIndex"></a>addIndex</h3><blockquote><figure class="highlight plain"><figcaption><span>… → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Creates a new list iteration function from an existing one by adding two new parameters to its callback function: the current index, and the entire list.</span><br><span class="line"></span><br><span class="line">This would turn, for instance, &#96;R.map&#96; function into one that more closely resembles &#96;Array.prototype.map&#96;. Note that this will only work for functions in which the iteration callback function is the first parameter, and where the list is the last parameter. (This latter might be unimportant if the list parameter is not used.)</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">const mapIndexed &#x3D; R.addIndex(R.map);</span><br><span class="line"></span><br><span class="line">mapIndexed((val, idx) &#x3D;&gt; idx + &#39;-&#39; + val, [&#39;f&#39;, &#39;o&#39;, &#39;o&#39;, &#39;b&#39;, &#39;a&#39;, &#39;r&#39;]);</span><br><span class="line">&#x2F;&#x2F;&#x3D;&gt; [&#39;0-f&#39;, &#39;1-o&#39;, &#39;2-o&#39;, &#39;3-b&#39;, &#39;4-a&#39;, &#39;5-r&#39;] </span><br></pre></td></tr></table></figure></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+          <category> Ramda </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Ramda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Adds two values</title>
+      <link href="/2020/03/18/2020-3-18-add/"/>
+      <url>/2020/03/18/2020-3-18-add/</url>
+      
+        <content type="html"><![CDATA[<h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><blockquote><figure class="highlight plain"><figcaption><span>-> Number -> Number```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Adds two values.</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">R.add(2, 3);  &#x2F;&#x2F;&#x3D;&gt;  5</span><br><span class="line">R.add(7)(10); &#x2F;&#x2F;&#x3D;&gt; 17 </span><br></pre></td></tr></table></figure></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+          <category> Ramda </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Ramda </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>混合对象-类</title>
+      <link href="/2020/03/17/2020-3-17-mixin-class-in-js/"/>
+      <url>/2020/03/17/2020-3-17-mixin-class-in-js/</url>
+      
+        <content type="html"><![CDATA[<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul><li>类是一种设计模式, JavaScript 中可以用一些方法实现类的功能</li><li>类意味着复制</li><li>传统的类被实例化时, 它的行为会被复制到实例中.</li><li>类被继承时, 行为也会被复制到子类中</li><li>多态看起来似乎是从子类引用父类, 但本质上引用的其实是复制的结果</li><li>JavaScript 的对象机制不会自动执行复制行为, 即 JavaScript 中只有对象, 不存在可以被实例化的”类”, 一个对象不会被复制到其他对象, 它们会被关联起来</li><li>混入(mixin): 模拟类的复制行为, 但会让代码难以读懂且难以维护</li></ul><h3 id="显式混入"><a href="#显式混入" class="headerlink" title="显式混入"></a>显式混入</h3><ul><li>伪多态会导致代码更复杂, 难以阅读且难以维护, 应尽量避免使用显式伪多态</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mixin</span>(<span class="params">sourceObj, targetObj</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> sourceObj) &#123;</span><br><span class="line">    <span class="comment">//不存在则复制</span></span><br><span class="line">    <span class="keyword">if</span> (!(key <span class="keyword">in</span> targetObj)) &#123;</span><br><span class="line">      targetObj[key] = sourceObj[key];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> targetObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Vehicle = &#123;</span><br><span class="line">  engines: <span class="number">1</span>,</span><br><span class="line">  ignition: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Start engine."</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  drive: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.ignition();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Go go go!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Car = mixin(Vehicle, &#123;</span><br><span class="line">  wheels: <span class="number">4</span>,</span><br><span class="line">  drive: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    Vehicle.drive.call(<span class="keyword">this</span>); <span class="comment">//显式多态, call(this)确保this绑定至Car而不是Vehicle</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Rolling on all"</span> + <span class="keyword">this</span>.wheels + <span class="string">" wheels!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ul><li>寄生继承</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统的JavaScript类Vehicle</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vehicle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.engines = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">Vehicle.prototype.ignition = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Start engine"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Vehicle.prototype.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.ignition();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Go go go!"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//寄生类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> car = <span class="keyword">new</span> Vehicle();</span><br><span class="line">  car.wheels = <span class="number">4</span>;</span><br><span class="line">  <span class="keyword">var</span> vehDrive = car.drive();</span><br><span class="line">  car.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    vehDrive.call(<span class="keyword">this</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Rolling on all"</span> + <span class="keyword">this</span>.wheels + <span class="string">" wheels!"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> car;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line">myCar.drive();</span><br><span class="line"><span class="comment">//"Start engine"</span></span><br><span class="line"><span class="comment">//"Go go go!"</span></span><br><span class="line"><span class="comment">//"Rolling on all 4 wheels!"</span></span><br></pre></td></tr></table></figure><h3 id="隐式混入"><a href="#隐式混入" class="headerlink" title="隐式混入"></a>隐式混入</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Something = &#123;</span><br><span class="line">  cool: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.greeting = <span class="string">"Hello"</span>;</span><br><span class="line">    <span class="keyword">this</span>.count = <span class="keyword">this</span>.count ? <span class="keyword">this</span>.count + <span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Something.cool();</span><br><span class="line">Something.greeting; <span class="comment">//"Hello"</span></span><br><span class="line">Something.count; <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Another = &#123;</span><br><span class="line">  cool: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    Something.cool.call(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Another.cool();</span><br><span class="line">Another.greeting; <span class="comment">//"Hello"</span></span><br><span class="line">Another.count; <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//利用了this的重绑定功能, 应尽量避免使用这样的结构, 以保持代码的整洁和可维护性</span></span><br></pre></td></tr></table></figure><ul><li>总之, 在 JavaScript 中模拟类是得不偿失的</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Object in JavaScript</title>
       <link href="/2020/03/17/2020-3-17-object/"/>
       <url>/2020/03/17/2020-3-17-object/</url>
@@ -88,35 +291,6 @@
       <url>/2020/03/14/2020-3-14-closure-in-javascript/</url>
       
         <content type="html"><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><blockquote><p>当函数可以记住并访问所在的词法作用域, 即使函数是在当前词法作用域之外执行, 这时就产生了<em>闭包</em></p></blockquote><blockquote><p>JavaScript中闭包无处不在, 只需要能够识别并拥抱它.</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> bar; <span class="comment">//将bar引用的函数对象本身当作返回值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> baz = foo();</span><br><span class="line"></span><br><span class="line">baz(); <span class="comment">//2 --这就是闭包</span></span><br></pre></td></tr></table></figure><p>拜bar()所声明的位置所赐, 它拥有涵盖foo()内部作用域的闭包, 使得该作用域能够一直存活, 一共bar()在之后任何时间进行引用. </p><blockquote><p>闭包使得函数可以继续访问定义时的词法作用域</p></blockquote><blockquote><p>只要使用了<em>回调函数</em>, 实际上就是使用闭包!</p></blockquote><ul><li>错误循环</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//以每秒一次的频率输出1~5</span></span><br><span class="line"><span class="comment">//循环终止时,i==6;</span></span><br><span class="line"><span class="comment">//延迟函数的回调会在循环全部结束时才执行, 因此每次都会输出一个6</span></span><br></pre></td></tr></table></figure><ul><li>正确示范</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法一:</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++) &#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(j);</span><br><span class="line">        &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//以每秒一次的频率分别输出1~5</span></span><br><span class="line"><span class="comment">//IIFE为每个迭代都生成新的作用域, 使得延迟函数的回调可以将新的作用域封闭在每个迭代内部, 访问正确的变量</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二:</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>; i&lt;=<span class="number">5</span>; i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//块作用域和闭包,天下无敌!</span></span><br></pre></td></tr></table></figure><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CoolModule</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> somthing = <span class="string">"cool"</span>;</span><br><span class="line">    <span class="keyword">var</span> another = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(something);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">doAnother</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.llog(another.join(<span class="string">"!"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        doSomething: doSomething,</span><br><span class="line">        doAnother: doAnother</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = CoolModule();</span><br><span class="line"></span><br><span class="line">foo.doSomething(); <span class="comment">//cool</span></span><br><span class="line">foo.doAnother(); <span class="comment">//1!2!3</span></span><br></pre></td></tr></table></figure><h3 id="模块模式必备条件"><a href="#模块模式必备条件" class="headerlink" title="模块模式必备条件:"></a>模块模式必备条件:</h3><ol><li>必须有外部的封闭函数, 该函数必须至少调用一次(每次调用都会创建一个新的模块实例)</li><li>封闭函数必须返回至少一个内部函数, 这样内部函数才能在私有作用域中形成闭包, 并且可以访问或者修改私有的状态</li></ol><h3 id="现代模块"><a href="#现代模块" class="headerlink" title="现代模块"></a>现代模块</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyModules = (<span class="function"><span class="keyword">function</span> <span class="title">Manager</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> modules = &#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">define</span>(<span class="params">name, deps, impl</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;deps.length; i++) &#123;</span><br><span class="line">            deps[i] = modules[deps[i]];</span><br><span class="line">        &#125;</span><br><span class="line">        modules[name] = impl.apply(impl, deps);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> modules[name];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        define: define,</span><br><span class="line">        <span class="keyword">get</span>: <span class="keyword">get</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">MyModules.define("bar", [], function()&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">who</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Let me introduce: "</span> + who;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        hello: hello</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">MyModules.define(<span class="string">"foo"</span>, [<span class="string">"bar"</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> hungry = <span class="string">"hippo"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">awesome</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(bar.hello(hungry).toUpperCase());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        awesome: awesome</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = MyModules.get(<span class="string">"bar"</span>);</span><br><span class="line"><span class="keyword">var</span> foo = MyModules.get(<span class="string">"foo"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(bar.hello(<span class="string">"hippo"</span>)); <span class="comment">//Let me introduce: hippo</span></span><br><span class="line">foo.awesome(); <span class="comment">//LET ME INTRODUCE: HIPPO</span></span><br></pre></td></tr></table></figure><h3 id="未来模块"><a href="#未来模块" class="headerlink" title="未来模块"></a>未来模块</h3><ul><li>bar.js</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">who</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Let me introduce: "</span> + who;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> hello;</span><br></pre></td></tr></table></figure><ul><li>foo.js</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hello <span class="keyword">from</span> <span class="string">"bar"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hungry = <span class="string">"hippo"</span>;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">awesome</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(hello(hungry).toUpperCase());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> awesome;</span><br></pre></td></tr></table></figure><ul><li>baz.js</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span> foo <span class="keyword">from</span> <span class="string">"foo"</span>;</span><br><span class="line"><span class="built_in">module</span> bar <span class="keyword">from</span> <span class="string">"bar"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(bar.hello(<span class="string">"rhino"</span>)); <span class="comment">//Let me introduce: rhino</span></span><br><span class="line">foo.awesome(); <span class="comment">//LET ME INTRODUCE: HIPPO</span></span><br></pre></td></tr></table></figure><ol><li>import可以将一个模块中的一个或多个API导入到当前作用域中, 并分别绑定在一个变量上, 如hello</li><li>module会将整个模块的API导入并绑定在一个变量上, 如foo和bar</li><li>export会将当前模块的一个标识符(变量, 函数)导出为公共函数</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> JavaScript </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> 前端 </tag>
-            
-            <tag> 基础知识 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>混合对象-类</title>
-      <link href="/2020/03/13/2020-3-17-mixin-class-in-js/"/>
-      <url>/2020/03/13/2020-3-17-mixin-class-in-js/</url>
-      
-        <content type="html"><![CDATA[<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul><li>类是一种设计模式, JavaScript中可以用一些方法实现类的功能</li><li>类意味着复制</li><li>传统的类被实例化时, 它的行为会被复制到实例中.</li><li>类被继承时, 行为也会被复制到子类中</li><li>多态看起来似乎是从子类引用父类, 但本质上引用的其实是复制的结果</li><li>JavaScript的对象机制不会自动执行复制行为, 即JavaScript中只有对象, 不存在可以被实例化的”类”, 一个对象不会被复制到其他对象, 它们会被关联起来</li><li>混入(mixin): 模拟类的复制行为, 但会让代码难以读懂且难以维护</li></ul><h3 id="显式混入"><a href="#显式混入" class="headerlink" title="显式混入"></a>显式混入</h3><ul><li>伪多态会导致代码更复杂, 难以阅读且难以维护, 应尽量避免使用显式伪多态</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mixin</span>(<span class="params">sourceObj, targetObj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> sourceObj) &#123;</span><br><span class="line">        <span class="comment">//不存在则复制</span></span><br><span class="line">        <span class="keyword">if</span> (!(key <span class="keyword">in</span> targetObj)) &#123;</span><br><span class="line">            targetObj[key] = sourceObj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> targetObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Vehicle = &#123;</span><br><span class="line">    engines: <span class="number">1</span>,</span><br><span class="line">    ignition: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Start engine."</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    drive: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ignition();</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Go go go!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Car = mixin(Vehicle, &#123;</span><br><span class="line">    wheels: <span class="number">4</span>,</span><br><span class="line">    drive: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        Vehicle.drive.call(<span class="keyword">this</span>); <span class="comment">//显式多态, call(this)确保this绑定至Car而不是Vehicle</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Rolling on all"</span> + <span class="keyword">this</span>.wheels + <span class="string">" wheels!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ul><li>寄生继承</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统的JavaScript类Vehicle</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vehicle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.engines = <span class="number">1</span>;    </span><br><span class="line">&#125;</span><br><span class="line">Vehicle.prototype.ignition = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Start engine"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Vehicle.prototype.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.ignition();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Go go go!"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//寄生类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> car = <span class="keyword">new</span> Vehicle();</span><br><span class="line">    car.wheels = <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">var</span> vehDrive = car.drive();</span><br><span class="line">    car.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        vehDrive.call(<span class="keyword">this</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Rolling on all"</span> + <span class="keyword">this</span>.wheels + <span class="string">" wheels!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> car;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line">myCar.drive();</span><br><span class="line"><span class="comment">//"Start engine"</span></span><br><span class="line"><span class="comment">//"Go go go!"</span></span><br><span class="line"><span class="comment">//"Rolling on all 4 wheels!"</span></span><br></pre></td></tr></table></figure><h3 id="隐式混入"><a href="#隐式混入" class="headerlink" title="隐式混入"></a>隐式混入</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Something = &#123;</span><br><span class="line">    cool: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.greeting = <span class="string">"Hello"</span>;</span><br><span class="line">        <span class="keyword">this</span>.count = <span class="keyword">this</span>.count? <span class="keyword">this</span>.count + <span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Something.cool();</span><br><span class="line">Something.greeting; <span class="comment">//"Hello"</span></span><br><span class="line">Something.count;    <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Another = &#123;</span><br><span class="line">    cool: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        Something.cool.call(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Another.cool();</span><br><span class="line">Another.greeting; <span class="comment">//"Hello"</span></span><br><span class="line">Another.count;    <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//利用了this的重绑定功能, 应尽量避免使用这样的结构, 以保持代码的整洁和可维护性</span></span><br></pre></td></tr></table></figure><ul><li>总之, 在JavaScript中模拟类是得不偿失的</li></ul>]]></content>
       
       
       <categories>
@@ -1521,11 +1695,11 @@
             
             <tag> 前端 </tag>
             
+            <tag> IE </tag>
+            
             <tag> HTML </tag>
             
             <tag> Meta </tag>
-            
-            <tag> IE </tag>
             
         </tags>
       
@@ -1856,9 +2030,9 @@
             
             <tag> 前端 </tag>
             
-            <tag> JSON </tag>
-            
             <tag> HTML </tag>
+            
+            <tag> JSON </tag>
             
         </tags>
       

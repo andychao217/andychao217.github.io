@@ -5,17 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>混合对象-类 - Welcome To My Blog Space</title>
+    <title>Creates a new list iteration function from an existing one by adding two new parameters to its callback function - Welcome To My Blog Space</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Andychao Blog Tech Frontend Javscript HTML,"> 
-    <meta name="description" content="Andy Chao&#39;s Tech Blog,类
-类是一种设计模式, JavaScript中可以用一些方法实现类的功能
-类意味着复制
-传统的类被实例化时, 它的行为会被复制到实例中.
-类被继承时, 行为也会被复制到子类中
-多态看起来似乎是从子类,"> 
+    <meta name="description" content="Andy Chao&#39;s Tech Blog,addIndex
+… → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)```123456789101112Creates a new li,"> 
     <meta name="author" content="Andy Chao"> 
     <link rel="alternative" href="atom.xml" title="Welcome To My Blog Space" type="application/atom+xml"> 
     <link rel="icon" href="/img/profilepic.jpg"> 
@@ -62,7 +58,7 @@
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/profilepic.jpg" alt="" data-url="https://andychao217.github.io">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">混合对象-类</h3>
+        <h3 class="subtitle">Creates a new list iteration function from an existing one by adding two new parameters to its callback function</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -95,22 +91,22 @@
                 <a href="/categories/JavaScript"><b>「
                     </b>JAVASCRIPT<b> 」</b></a>
                 
-                March 13, 2020
+                March 19, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/2020/03/13/2020-3-17-mixin-class-in-js/" title="混合对象-类" class="">混合对象-类</a>
+            <h3 class="post-title animated fadeInDown"><a href="/2020/03/19/2020-3-19-add-Index/" title="Creates a new list iteration function from an existing one by adding two new parameters to its callback function" class="">Creates a new list iteration function from an existing one by adding two new parameters to its callback function</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    10k
+                    1.9k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    10 mins.
+                    2 mins.
                 </span>
                 
                 
@@ -123,7 +119,7 @@
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ramda/" rel="tag">Ramda</a></li></ul>
             
         </div>
     </div>
@@ -144,28 +140,8 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
-<li>类是一种设计模式, JavaScript中可以用一些方法实现类的功能</li>
-<li>类意味着复制</li>
-<li>传统的类被实例化时, 它的行为会被复制到实例中.</li>
-<li>类被继承时, 行为也会被复制到子类中</li>
-<li>多态看起来似乎是从子类引用父类, 但本质上引用的其实是复制的结果</li>
-<li>JavaScript的对象机制不会自动执行复制行为, 即JavaScript中只有对象, 不存在可以被实例化的”类”, 一个对象不会被复制到其他对象, 它们会被关联起来</li>
-<li>混入(mixin): 模拟类的复制行为, 但会让代码难以读懂且难以维护</li>
-</ul>
-<h3 id="显式混入"><a href="#显式混入" class="headerlink" title="显式混入"></a>显式混入</h3><ul>
-<li>伪多态会导致代码更复杂, 难以阅读且难以维护, 应尽量避免使用显式伪多态</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mixin</span>(<span class="params">sourceObj, targetObj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> sourceObj) &#123;</span><br><span class="line">        <span class="comment">//不存在则复制</span></span><br><span class="line">        <span class="keyword">if</span> (!(key <span class="keyword">in</span> targetObj)) &#123;</span><br><span class="line">            targetObj[key] = sourceObj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> targetObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Vehicle = &#123;</span><br><span class="line">    engines: <span class="number">1</span>,</span><br><span class="line">    ignition: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Start engine."</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    drive: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ignition();</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Go go go!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Car = mixin(Vehicle, &#123;</span><br><span class="line">    wheels: <span class="number">4</span>,</span><br><span class="line">    drive: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        Vehicle.drive.call(<span class="keyword">this</span>); <span class="comment">//显式多态, call(this)确保this绑定至Car而不是Vehicle</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Rolling on all"</span> + <span class="keyword">this</span>.wheels + <span class="string">" wheels!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>寄生继承</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统的JavaScript类Vehicle</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vehicle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.engines = <span class="number">1</span>;    </span><br><span class="line">&#125;</span><br><span class="line">Vehicle.prototype.ignition = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Start engine"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">Vehicle.prototype.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.ignition();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Go go go!"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//寄生类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> car = <span class="keyword">new</span> Vehicle();</span><br><span class="line">    car.wheels = <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">var</span> vehDrive = car.drive();</span><br><span class="line">    car.drive = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        vehDrive.call(<span class="keyword">this</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Rolling on all"</span> + <span class="keyword">this</span>.wheels + <span class="string">" wheels!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> car;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> Car();</span><br><span class="line">myCar.drive();</span><br><span class="line"><span class="comment">//"Start engine"</span></span><br><span class="line"><span class="comment">//"Go go go!"</span></span><br><span class="line"><span class="comment">//"Rolling on all 4 wheels!"</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="隐式混入"><a href="#隐式混入" class="headerlink" title="隐式混入"></a>隐式混入</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Something = &#123;</span><br><span class="line">    cool: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.greeting = <span class="string">"Hello"</span>;</span><br><span class="line">        <span class="keyword">this</span>.count = <span class="keyword">this</span>.count? <span class="keyword">this</span>.count + <span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Something.cool();</span><br><span class="line">Something.greeting; <span class="comment">//"Hello"</span></span><br><span class="line">Something.count;    <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Another = &#123;</span><br><span class="line">    cool: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        Something.cool.call(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Another.cool();</span><br><span class="line">Another.greeting; <span class="comment">//"Hello"</span></span><br><span class="line">Another.count;    <span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//利用了this的重绑定功能, 应尽量避免使用这样的结构, 以保持代码的整洁和可维护性</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>总之, 在JavaScript中模拟类是得不偿失的</li>
-</ul>
+            <h3 id="addIndex"><a href="#addIndex" class="headerlink" title="addIndex"></a>addIndex</h3><blockquote>
+<figure class="highlight plain"><figcaption><span>… → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Creates a new list iteration function from an existing one by adding two new parameters to its callback function: the current index, and the entire list.</span><br><span class="line"></span><br><span class="line">This would turn, for instance, &#96;R.map&#96; function into one that more closely resembles &#96;Array.prototype.map&#96;. Note that this will only work for functions in which the iteration callback function is the first parameter, and where the list is the last parameter. (This latter might be unimportant if the list parameter is not used.)</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">const mapIndexed &#x3D; R.addIndex(R.map);</span><br><span class="line"></span><br><span class="line">mapIndexed((val, idx) &#x3D;&gt; idx + &#39;-&#39; + val, [&#39;f&#39;, &#39;o&#39;, &#39;o&#39;, &#39;b&#39;, &#39;a&#39;, &#39;r&#39;]);</span><br><span class="line">&#x2F;&#x2F;&#x3D;&gt; [&#39;0-f&#39;, &#39;1-o&#39;, &#39;2-o&#39;, &#39;3-b&#39;, &#39;4-a&#39;, &#39;5-r&#39;] </span><br></pre></td></tr></table></figure></blockquote>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -213,9 +189,9 @@
                     </dl>
                 </div>
                 <ul>
-                    <li><a href="/">72 <p>Articles</p></a></li>
-                    <li><a href="/categories">21 <p>Categories</p></a></li>
-                    <li><a href="/tags">51 <p>Tags</p></a></li>
+                    <li><a href="/">78 <p>Articles</p></a></li>
+                    <li><a href="/categories">22 <p>Categories</p></a></li>
+                    <li><a href="/tags">52 <p>Tags</p></a></li>
                 </ul>
             </div>
             
@@ -224,7 +200,7 @@
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>Contents</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#类"><span class="toc-number">1.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#显式混入"><span class="toc-number">1.1.</span> <span class="toc-text">显式混入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式混入"><span class="toc-number">1.2.</span> <span class="toc-text">隐式混入</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#addIndex"><span class="toc-number">1.</span> <span class="toc-text">addIndex</span></a></li></ol>
                 </div>
             </div>
             
