@@ -11,7 +11,9 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Andychao Blog Tech Frontend Javscript HTML,"> 
     <meta name="description" content="Andy Chao&#39;s Tech Blog,addIndex
-… → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)```123456789101112Creates a new li,"> 
+((a … → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)
+
+Creates a new list iteration,"> 
     <meta name="author" content="Andy Chao"> 
     <link rel="alternative" href="atom.xml" title="Welcome To My Blog Space" type="application/atom+xml"> 
     <link rel="icon" href="/img/profilepic.jpg"> 
@@ -100,13 +102,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    1.9k
+                    1.6k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    2 mins.
+                    1 mins.
                 </span>
                 
                 
@@ -141,8 +143,12 @@
     <div class='main'>
         <div class="content markdown animated fadeIn">
             <h3 id="addIndex"><a href="#addIndex" class="headerlink" title="addIndex"></a>addIndex</h3><blockquote>
-<figure class="highlight plain"><figcaption><span>… → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Creates a new list iteration function from an existing one by adding two new parameters to its callback function: the current index, and the entire list.</span><br><span class="line"></span><br><span class="line">This would turn, for instance, &#96;R.map&#96; function into one that more closely resembles &#96;Array.prototype.map&#96;. Note that this will only work for functions in which the iteration callback function is the first parameter, and where the list is the last parameter. (This latter might be unimportant if the list parameter is not used.)</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">const mapIndexed &#x3D; R.addIndex(R.map);</span><br><span class="line"></span><br><span class="line">mapIndexed((val, idx) &#x3D;&gt; idx + &#39;-&#39; + val, [&#39;f&#39;, &#39;o&#39;, &#39;o&#39;, &#39;b&#39;, &#39;a&#39;, &#39;r&#39;]);</span><br><span class="line">&#x2F;&#x2F;&#x3D;&gt; [&#39;0-f&#39;, &#39;1-o&#39;, &#39;2-o&#39;, &#39;3-b&#39;, &#39;4-a&#39;, &#39;5-r&#39;] </span><br></pre></td></tr></table></figure></blockquote>
-
+<p>((a … → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)</p>
+</blockquote>
+<p>Creates a new list iteration function from an existing one by adding two new parameters to its callback function: the current index, and the entire list.</p>
+<p>This would turn, for instance, <code>R.map</code> function into one that more closely resembles <code>Array.prototype.map</code>. Note that this will only work for functions in which the iteration callback function is the first parameter, and where the list is the last parameter. (This latter might be unimportant if the list parameter is not used.)</p>
+<p><code>Example</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mapIndexed = R.addIndex(R.map);</span><br><span class="line"></span><br><span class="line">mapIndexed(<span class="function">(<span class="params">val, idx</span>) =&gt;</span> idx + <span class="string">'-'</span> + val, [<span class="string">'f'</span>, <span class="string">'o'</span>, <span class="string">'o'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'r'</span>]);</span><br><span class="line"><span class="comment">//=&gt; ['0-f', '1-o', '2-o', '3-b', '4-a', '5-r']</span></span><br></pre></td></tr></table></figure>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">

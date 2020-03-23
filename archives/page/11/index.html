@@ -82,7 +82,10 @@
                                         <a class="timeline-title" target="_self" href="/2020/03/23/2020-3-23-always/">Returns a function that always returns the given value.</a>
                                         <p>
                                             always
-→ (* → a)```1234567891011Returns a function that always returns the given value. Note that for non-primitives the value returned is a reference to the original value.This function is known a...
+a → (* → a)
+
+Returns a function that always returns the given value. Note that for non-primitives the value returned is a reference to the original value.
+This function is known as const, co...
                                         </p>
                                     </div>
                                 </li>
@@ -97,7 +100,9 @@
                                         <a class="timeline-title" target="_self" href="/2020/03/22/2020-3-22-allPass/">Returns true for a given list of arguments if every one of the provided predicates is satisfied by those arguments</a>
                                         <p>
                                             allPass
-→ Boolean)] → (*… → Boolean)```1234567891011121314Takes a list of predicates and returns a predicate that returns true for a given list of arguments if every one of the provided predicates ...
+[(… → Boolean)] → (… → Boolean)
+
+Takes a list of predicates and returns a predicate that returns true for a given list of arguments if every one of the provided predicates is satisfied by t...
                                         </p>
                                     </div>
                                 </li>
@@ -112,7 +117,11 @@
                                         <a class="timeline-title" target="_self" href="/2020/03/21/2020-3-21-all/">Returns true if all elements of the list match the predicate, false if there are any that don&#39;t</a>
                                         <p>
                                             all
-→ Boolean) → [a] → Boolean```1234567891011121314Returns &#96;true&#96; if all elements of the list match the predicate, &#96;false&#96; if there are any that don&#39;t.Dispatches to the all met...
+(a → Boolean) → [a] → Boolean
+
+Returns true if all elements of the list match the predicate, false if there are any that don’t.
+Dispatches to the all method of the second argument, if present.
+...
                                         </p>
                                     </div>
                                 </li>
@@ -127,7 +136,9 @@
                                         <a class="timeline-title" target="_self" href="/2020/03/20/2020-3-20-adjust/">Adjust the value at the given index of an array</a>
                                         <p>
                                             adjust
-→ (a → a) → [a] → [a]```12345678Applies a function to the value at the given index of an array, returning a new copy of the array with the element at the given index replaced with the result...
+Number → (a → a) → [a] → [a]
+
+Applies a function to the value at the given index of an array, returning a new copy of the array with the element at the given index replaced with the result o...
                                         </p>
                                     </div>
                                 </li>
@@ -142,7 +153,9 @@
                                         <a class="timeline-title" target="_self" href="/2020/03/19/2020-3-19-add-Index/">Creates a new list iteration function from an existing one by adding two new parameters to its callback function</a>
                                         <p>
                                             addIndex
-… → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)```123456789101112Creates a new list iteration function from an existing one by adding two new parameters to its callback function: ...
+((a … → b) … → [a] -→ *) → ((a …, Int, [a] → b) … → [a] → *)
+
+Creates a new list iteration function from an existing one by adding two new parameters to its callback function: the current ...
                                         </p>
                                     </div>
                                 </li>
@@ -157,8 +170,11 @@
                                         <a class="timeline-title" target="_self" href="/2020/03/18/2020-3-18-add/">Adds two values</a>
                                         <p>
                                             add
--> Number -> Number```12345678Adds two values.&#96;Example&#96;&#96;&#96;&#96;jsR.add(2, 3);  &#x2F;&#x2F;&#x3D;&gt;  5R.add(7)(10); &#x2F;&#x2F;&#x3D;&gt; 17 
+Number -&gt; Number -&gt; Number
 
+Adds two values.
+Example
+12R.add(2, 3);  //=&gt;  5R.add(7)(10); //=&gt; 17
                                         </p>
                                     </div>
                                 </li>

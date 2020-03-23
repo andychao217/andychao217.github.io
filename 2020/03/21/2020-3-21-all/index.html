@@ -11,7 +11,9 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Andychao Blog Tech Frontend Javscript HTML,"> 
     <meta name="description" content="Andy Chao&#39;s Tech Blog,all
-→ Boolean) → [a] → Boolean```1234567891011121314Returns &amp;#96;true&amp;#96; if all elements of the l,"> 
+(a → Boolean) → [a] → Boolean
+
+Returns true if all elements of the list match the predicate, fa,"> 
     <meta name="author" content="Andy Chao"> 
     <link rel="alternative" href="atom.xml" title="Welcome To My Blog Space" type="application/atom+xml"> 
     <link rel="icon" href="/img/profilepic.jpg"> 
@@ -100,7 +102,7 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    1.6k
+                    1.3k
                 </span>
                 
                 
@@ -141,8 +143,13 @@
     <div class='main'>
         <div class="content markdown animated fadeIn">
             <h3 id="all"><a href="#all" class="headerlink" title="all"></a>all</h3><blockquote>
-<figure class="highlight plain"><figcaption><span>→ Boolean) → [a] → Boolean```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Returns &#96;true&#96; if all elements of the list match the predicate, &#96;false&#96; if there are any that don&#39;t.</span><br><span class="line"></span><br><span class="line">Dispatches to the all method of the second argument, if present.</span><br><span class="line"></span><br><span class="line">Acts as a transducer if a transformer is given in list position.</span><br><span class="line"></span><br><span class="line">&#96;Example&#96;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;js</span><br><span class="line">const equals3 &#x3D; R.equals(3);</span><br><span class="line"></span><br><span class="line">R.all(equals3)([3, 3, 3, 3]); &#x2F;&#x2F;&#x3D;&gt; true</span><br><span class="line">R.all(equals3)([3, 3, 1, 3]); &#x2F;&#x2F;&#x3D;&gt; false </span><br></pre></td></tr></table></figure></blockquote>
-
+<p>(a → Boolean) → [a] → Boolean</p>
+</blockquote>
+<p>Returns <code>true</code> if all elements of the list match the predicate, <code>false</code> if there are any that don’t.</p>
+<p>Dispatches to the all method of the second argument, if present.</p>
+<p>Acts as a transducer if a transformer is given in list position.</p>
+<p><code>Example</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> equals3 = R.equals(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">R.all(equals3)([<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>]); <span class="comment">//=&gt; true</span></span><br><span class="line">R.all(equals3)([<span class="number">3</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>]); <span class="comment">//=&gt; false</span></span><br></pre></td></tr></table></figure>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
                 data-autoplay="false">

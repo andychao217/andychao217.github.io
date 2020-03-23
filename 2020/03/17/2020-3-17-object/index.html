@@ -107,13 +107,13 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    32k
+                    33k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                    29 mins.
+                    30 mins.
                 </span>
                 
                 
@@ -157,36 +157,36 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">myObj.key = value;</span><br></pre></td></tr></table></figure>
 <h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><h3 id="JavaScript基础类型"><a href="#JavaScript基础类型" class="headerlink" title="JavaScript基础类型"></a>JavaScript基础类型</h3><ol>
-<li>string</li>
-<li>number</li>
-<li>boolean</li>
-<li>null</li>
-<li>undefined</li>
-<li>object</li>
+<li><code>string</code></li>
+<li><code>number</code></li>
+<li><code>boolean</code></li>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+<li><code>object</code></li>
 </ol>
 <blockquote>
-<p>简单基本类型(string, number, boolean, null, undefined)本身并不是对象, 但是typeof null会返回object, 这是语言本身的一个错误</p>
+<p>简单基本类型<code>(string, number, boolean, null, undefined)</code>本身并不是对象, 但是<code>typeof null</code>会返回<code>object</code>, 这是语言本身的一个错误</p>
 </blockquote>
 <h3 id="内置对象-JavaScript中对象子类型"><a href="#内置对象-JavaScript中对象子类型" class="headerlink" title="内置对象(JavaScript中对象子类型)"></a>内置对象(JavaScript中对象子类型)</h3><ol>
-<li>String</li>
-<li>Number</li>
-<li>Boolean</li>
-<li>Object</li>
-<li>Function</li>
-<li>Array</li>
-<li>Date</li>
-<li>RegExp</li>
-<li>Error</li>
+<li><code>String</code></li>
+<li><code>Number</code></li>
+<li><code>Boolean</code></li>
+<li><code>Object</code></li>
+<li><code>Function</code></li>
+<li><code>Array</code></li>
+<li><code>Date</code></li>
+<li><code>RegExp</code></li>
+<li><code>Error</code></li>
 </ol>
 <blockquote>
 <p>它们实际上只是一些内置函数, 这些内置函数可以作为构造函数使用</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"I am a string"</span>;</span><br><span class="line"><span class="keyword">typeof</span> str; <span class="comment">//"string";</span></span><br><span class="line">string <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">//false</span></span><br><span class="line"><span class="comment">//str原始值"I am a string"不是一个对象,只是一个字面量,而且不可变</span></span><br><span class="line"><span class="comment">//如果要对其操作,如获取长度,访问其中某个字符等,需要将其转换为String对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> strObject = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"I am a string"</span>);</span><br><span class="line"><span class="keyword">typeof</span> strObject; <span class="comment">//"object"</span></span><br><span class="line">strOject <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(strObject); <span class="comment">//[object object]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.length); <span class="comment">//13</span></span><br><span class="line"><span class="built_in">console</span>.log(str.charAt(<span class="number">3</span>)); <span class="comment">//"m"</span></span><br><span class="line"><span class="comment">//操作时, JavaScript引擎会自动把string字面量转换为String对象</span></span><br><span class="line"><span class="comment">//同理, 使用42.359.toFixed(2)方法时,</span></span><br><span class="line"><span class="comment">//引擎会把42转换为new Number(42)</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>null和undefined没有构造形式, 只有文字形式</li>
-<li>Date只有构造形式, 没有文字形式</li>
-<li>Object, Array, Function, RegExp 无论使用文字还是构造形式, 它们都是对象, 不是字面量</li>
-<li>Error很少在代码中显示创建, 一般是抛出异常时自动创建, 也可以使用new Error(…)创建</li>
+<li><code>null</code>和<code>undefined</code>没有构造形式, 只有文字形式</li>
+<li><code>Date</code>只有构造形式, 没有文字形式</li>
+<li><code>Object</code>, <code>Array</code>, <code>Function</code>, <code>RegExp</code> 无论使用文字还是构造形式, 它们都是对象, 不是字面量</li>
+<li><code>Error</code>很少在代码中显示创建, 一般是抛出异常时自动创建, 也可以使用<code>new Error(...)</code>创建</li>
 </ul>
 <h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><blockquote>
 <p>对象的内容是由一些存储在特定命名位置的值组成, 即属性. 属性的名称就像指针, 指向这些值真正的储存位置</p>
@@ -194,7 +194,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    a:<span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line">myObject.a; <span class="comment">//2</span></span><br><span class="line"><span class="comment">//"属性访问": 属性名需满足命名规范</span></span><br><span class="line"></span><br><span class="line">myObject[<span class="string">"a"</span>]; <span class="comment">//2</span></span><br><span class="line"><span class="comment">//"键访问": 支持任意UTF-8/Unicode字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果要引用名为"Super-Fun!"的属性, 就必须使用["Super-Fun!"]访问</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>对象中, 属性名永远都是字符串</li>
-<li>如果使用string以外的其他值作为属性名, 它也会首先被转换为字符串</li>
+<li>如果使用<code>string</code>以外的其他值作为属性名, 它也会首先被转换为字符串</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">myObject[<span class="literal">true</span>] = <span class="string">"foo"</span>;</span><br><span class="line">myObject[<span class="number">3</span>] = <span class="string">"bar"</span>;</span><br><span class="line">myObject[myObject] = <span class="string">"baz"</span>;</span><br><span class="line"></span><br><span class="line">myObject[<span class="string">"true"</span>]; <span class="comment">//"foo"</span></span><br><span class="line">myObject[<span class="string">"3"</span>]; <span class="comment">//"bar"</span></span><br><span class="line">myObject[<span class="string">"[object object]"</span>]; <span class="comment">//"baz"</span></span><br></pre></td></tr></table></figure>
 <h3 id="可计算属性名"><a href="#可计算属性名" class="headerlink" title="可计算属性名"></a>可计算属性名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> prefix = <span class="string">"foo"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">    [prefix + <span class="string">"bar"</span>]: <span class="string">"hello"</span>,</span><br><span class="line">    [prefix + <span class="string">"baz"</span>]: <span class="string">"world"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myObject[<span class="string">"foobar"</span>]; <span class="comment">//hello</span></span><br><span class="line">myObject[<span class="string">"foobaz"</span>]; <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
@@ -254,20 +254,20 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObj, <span class="string">"a"</span>, &#123;</span><br><span class="line">    enumerable: <span class="literal">true</span>,</span><br><span class="line">    value: <span class="number">2</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObj, <span class="string">"b"</span>, &#123;</span><br><span class="line">    enumerable: <span class="literal">false</span>,</span><br><span class="line">    value: <span class="number">4</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性是否可枚举</span></span><br><span class="line">myObj.propertyIsEnumerable(<span class="string">"a"</span>); <span class="comment">//true</span></span><br><span class="line">myObj.propertyIsEnumerable(<span class="string">"b"</span>); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(myObj); <span class="comment">//["a"] 对象中可枚举的属性名数组</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(myObj); <span class="comment">//["a", "b"] 对象中所有属性名数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> myObj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(k, myObj[k]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//"a" 2 不可枚举的元素不参与遍历</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><blockquote>
-<p>迭代器: for…in, forEach(…), every(…), some(….)</p>
+<p>迭代器: <code>for...in</code>, <code>forEach(...)</code>, <code>every(...)</code>, <code>some(....)</code></p>
 </blockquote>
 <ul>
-<li>for…in会遍历所有可枚举属性, 但是无法直接获取属性值, 需要手动获取</li>
-<li>forEach(…)会遍历数组中所有值且<em>忽略</em>回调函数的返回值</li>
-<li>every(…)会一直运行到回调函数返回false时停止</li>
-<li>some(…)会一直运行到回调函数返回true时停止</li>
-<li>every(…)和some(…)中特殊的返回值, 类型for中的break, 会提前终止遍历</li>
+<li><code>for...</code>in会遍历所有可枚举属性, 但是无法直接获取属性值, 需要手动获取</li>
+<li><code>forEach(...)</code>会遍历数组中所有值且<em>忽略</em>回调函数的返回值</li>
+<li><code>every(...)</code>会一直运行到回调函数返回false时停止</li>
+<li><code>some(...)</code>会一直运行到回调函数返回true时停止</li>
+<li><code>every(...)</code>和<code>some(...)</code>中特殊的返回值, 类型<code>for</code>中的<code>break</code>, 会提前终止遍历</li>
 <li>遍历数组下标时采用的是数字顺序, 但遍历对象的顺序是不确定的, 而且不同的JavaScript引擎不一样, 当对顺序有要求时, 一定不要相信任何直接观察到的顺序, 它们是不可靠的</li>
 <li>数组遍历</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ES6中遍历数组的值还可以这样操作 for...of</span></span><br><span class="line"><span class="keyword">var</span> myArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> v <span class="keyword">of</span> myArray) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//1 2 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数组内置的@@iterator属性</span></span><br><span class="line"><span class="keyword">var</span> it = myArray[<span class="built_in">Symbol</span>.iterator](); <span class="comment">//Symbol.iterator用来获取@@iterator</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:1, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:2, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:3, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;done:true&#125;</span></span><br><span class="line"><span class="comment">//value是当前遍历的值, done表示遍历是否完成</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>普通对象没有内置@@iterator属性, 但我们可以自定义一个</li>
+<li>普通对象没有内置<code>@@iterator</code>属性, 但我们可以自定义一个</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    b: <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义@@iterator属性</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(myObj, <span class="built_in">Symbol</span>.iterator, &#123;</span><br><span class="line">    enumerable: <span class="literal">false</span>,</span><br><span class="line">    writable: <span class="literal">false</span>,</span><br><span class="line">    configurable: <span class="literal">true</span>,</span><br><span class="line">    value: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> o = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> idx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">var</span> ks = <span class="built_in">Object</span>.keys(o);</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            next: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;</span><br><span class="line">                    value: o[ks[idx++]],</span><br><span class="line">                    done: (idx &gt; ks.length)</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法与数组相同</span></span><br><span class="line"><span class="keyword">var</span> it = myObj[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line">it.next(); <span class="comment">//&#123;value:2, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:3, done:false&#125;</span></span><br><span class="line">it.next(); <span class="comment">//&#123;value:undefined, done:true&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//现在也可以使用for...of了!!</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> v <span class="keyword">of</span> myObj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//只要next()调用会返回&#123;value: ...&#125;和&#123;done: true&#125;, ES6的for...of就可以遍历它</span></span><br></pre></td></tr></table></figure>
 
