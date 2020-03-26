@@ -625,7 +625,7 @@
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        1.5k
+                        1.4k
                     </span>
                 
                 
@@ -642,9 +642,11 @@
         
         <div class="md-content animated fadeIn">
             
-                <h3 id="average"><a href="#average" class="headerlink" title="average"></a>average</h3><p>:information_source: Already implemented via <code>statistics.mean</code>. <code>statistics.mean</code> takes an array as an argument whereas this function takes variadic arguments.</p>
-<p>Returns the average of two or more numbers.</p>
-<p>Takes the sum of all the <code>args</code> and divides it...</p>
+                <h3 id="average"><a href="#average" class="headerlink" title="average"></a>average</h3><p>Returns the average of two or more numbers.</p>
+<p>Takes the sum of all the <code>args</code> and divides it by <code>len(args)</code>. The second argument <code>0.0</code> in sum is to handle floating point division in <code>python3</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">average</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args, <span class="number">0.0</span>) / len(args)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">average...</span></pre></td></tr></table></figure>
             
             <span class="read-more"><a href="/2020/03/08/2020-3-8-average/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
@@ -701,7 +703,7 @@
 
     </div>
     
-    <div id="pager"><a href="/page/3/" class="more" data-loading="加载中..." data-load-more="Load more">Load more</a></div>
+    <div id="pager"><a href="/page/3/" class="more" data-loading="Loading..." data-load-more="Load more">Load more</a></div>
     
 </div>
 <div id="preview"></div>

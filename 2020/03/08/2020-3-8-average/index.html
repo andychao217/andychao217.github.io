@@ -10,7 +10,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Andychao Blog Tech Frontend Javscript HTML,"> 
-    <meta name="description" content="Andy Chao&#39;s Tech Blog,average:information_source: Already implemented via statistics.mean. statistics.mean takes an array,"> 
+    <meta name="description" content="Andy Chao&#39;s Tech Blog,averageReturns the average of two or more numbers.
+Takes the sum of all the args and divides it by ,"> 
     <meta name="author" content="Andy Chao"> 
     <link rel="alternative" href="atom.xml" title="Welcome To My Blog Space" type="application/atom+xml"> 
     <link rel="icon" href="/img/profilepic.jpg"> 
@@ -99,7 +100,7 @@
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>Words count</i>
-                    1.5k
+                    1.4k
                 </span>
                 
                 
@@ -139,8 +140,7 @@
 <div class="article">
     <div class='main'>
         <div class="content markdown animated fadeIn">
-            <h3 id="average"><a href="#average" class="headerlink" title="average"></a>average</h3><p>:information_source: Already implemented via <code>statistics.mean</code>. <code>statistics.mean</code> takes an array as an argument whereas this function takes variadic arguments.</p>
-<p>Returns the average of two or more numbers.</p>
+            <h3 id="average"><a href="#average" class="headerlink" title="average"></a>average</h3><p>Returns the average of two or more numbers.</p>
 <p>Takes the sum of all the <code>args</code> and divides it by <code>len(args)</code>. The second argument <code>0.0</code> in sum is to handle floating point division in <code>python3</code>.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">average</span><span class="params">(*args)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(args, <span class="number">0.0</span>) / len(args)</span><br></pre></td></tr></table></figure>
 
