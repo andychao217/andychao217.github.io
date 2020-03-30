@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>Browser or Node?</title>
+      <link href="/2020/03/30/2020-3-30-tool-functions%20-%20Copy/"/>
+      <url>/2020/03/30/2020-3-30-tool-functions%20-%20Copy/</url>
+      
+        <content type="html"><![CDATA[<h2 id="isBrowser"><a href="#isBrowser" class="headerlink" title="isBrowser"></a>isBrowser</h2><p>Determines if the current runtime environment is a browser so that front-end modules can run on the server (Node) without throwing errors.</p><p>Use <code>Array.prototype.includes()</code> on the typeof values of both window and document (globals usually only available in a browser environment unless they were explicitly defined), which will return true if one of them is <code>undefined. typeof</code> allows globals to be checked for existence without throwing a <code>ReferenceError</code>. If both of them are not undefined, then the current environment is assumed to be a browser.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isBrowser = <span class="function"><span class="params">()</span> =&gt;</span> ![<span class="keyword">typeof</span> <span class="built_in">window</span>, <span class="keyword">typeof</span> <span class="built_in">document</span>].includes(<span class="string">'undefined'</span>);</span><br><span class="line">isBrowser(); <span class="comment">// true (browser)</span></span><br><span class="line">isBrowser(); <span class="comment">// false (Node)</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Compare two objects in JavaScript</title>
+      <link href="/2020/03/29/2020-3-29-compare-two-objects-in-js/"/>
+      <url>/2020/03/29/2020-3-29-compare-two-objects-in-js/</url>
+      
+        <content type="html"><![CDATA[<h2 id="How-do-you-compare-two-objects-in-JavaScript"><a href="#How-do-you-compare-two-objects-in-JavaScript" class="headerlink" title="How do you compare two objects in JavaScript?"></a>How do you compare two objects in JavaScript?</h2><h3 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h3><p>Even though two different objects can have the same properties with equal values, they are not considered equal when compared using == or ===. This is because they are being compared by their reference (location in memory), unlike primitive values which are compared by value.</p><p>In order to test if two objects are equal in structure, a helper function is required. It will iterate through the own properties of each object to test if they have the same values, including nested objects. Optionally, the prototypes of the objects may also be tested for equivalence by passing true as the 3rd argument.</p><p>Note: this technique does not attempt to test equivalence of data structures other than plain objects, arrays, functions, dates and primitive values.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isDeepEqual</span>(<span class="params">obj1, obj2, testPrototypes = false</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (obj1 === obj2) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> obj1 === <span class="string">"function"</span> &amp;&amp; <span class="keyword">typeof</span> obj2 === <span class="string">"function"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> obj1.toString() === obj2.toString()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (obj1 <span class="keyword">instanceof</span> <span class="built_in">Date</span> &amp;&amp; obj2 <span class="keyword">instanceof</span> <span class="built_in">Date</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> obj1.getTime() === obj2.getTime()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (</span><br><span class="line">    <span class="built_in">Object</span>.prototype.toString.call(obj1) !==</span><br><span class="line">      <span class="built_in">Object</span>.prototype.toString.call(obj2) ||</span><br><span class="line">    <span class="keyword">typeof</span> obj1 !== <span class="string">"object"</span></span><br><span class="line">  ) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> prototypesAreEqual = testPrototypes</span><br><span class="line">    ? isDeepEqual(</span><br><span class="line">        <span class="built_in">Object</span>.getPrototypeOf(obj1),</span><br><span class="line">        <span class="built_in">Object</span>.getPrototypeOf(obj2),</span><br><span class="line">        <span class="literal">true</span></span><br><span class="line">      )</span><br><span class="line">    : <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> obj1Props = <span class="built_in">Object</span>.getOwnPropertyNames(obj1)</span><br><span class="line">  <span class="keyword">const</span> obj2Props = <span class="built_in">Object</span>.getOwnPropertyNames(obj2)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    obj1Props.length === obj2Props.length &amp;&amp;</span><br><span class="line">    prototypesAreEqual &amp;&amp;</span><br><span class="line">    obj1Props.every(<span class="function"><span class="params">prop</span> =&gt;</span> isDeepEqual(obj1[prop], obj2[prop]))</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h3><ul><li>Primitives like strings and numbers are compared by their value</li><li>Objects on the other hand are compared by their reference (location in memory)</li></ul><h3 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h3><ul><li><a href="http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html" target="_blank" rel="noopener">Object Equality in JavaScript</a></li><li><a href="https://30secondsofcode.org/object#equals" target="_blank" rel="noopener">Deep comparison between two values</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Tool functions</title>
       <link href="/2020/03/28/2020-3-28-tool-functions/"/>
       <url>/2020/03/28/2020-3-28-tool-functions/</url>
@@ -1033,9 +1089,9 @@
             
             <tag> 前端 </tag>
             
-            <tag> Video </tag>
-            
             <tag> Flv.js </tag>
+            
+            <tag> Video </tag>
             
         </tags>
       
