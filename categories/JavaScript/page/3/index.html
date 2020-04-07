@@ -140,40 +140,35 @@
             <a href="/categories/JavaScript"><b>「
                 </b>JAVASCRIPT<b> 」</b></a>
             
-            March 17, 2020
+            March 28, 2020
         </p>
         <h3 class="post-title animated fadeInDown">
-            <a href="/2020/03/17/2020-3-17-mixin-class-in-js/" title="混合对象-类" class="posttitle">混合对象-类</a></h3>
+            <a href="/2020/03/28/2020-3-28-tool-functions/" title="Tool functions" class="posttitle">Tool functions</a></h3>
         
         <p class="post-count animated fadeInDown">
             
             <span>
                 <b class="iconfont icon-text2"></b> <i>Words count</i>
-                10k
+                18k
             </span>
             
             
             <span>
                 <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                9 mins.
+                17 mins.
             </span>
             
             
         </p>
         
         
-        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+        <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
         
         <div class="md-content animated fadeIn">
             
-            <ul>
-<li>类是一种设计模式, JavaScript 中可以用一些方法实现类的功能</li>
-<li>类意味着复制</li>
-<li>传统的类被实例化时, 它的行为会被复制到实例中.</li>
-<li>类被继承时, 行为也会被复制到子类中</li>
-<li>多态看起来似乎是从子类引...</li></ul>
+            <h3 id="Smooth-scrolling"><a href="#Smooth-scrolling" class="headerlink" title="Smooth scrolling"></a>Smooth scrolling</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> smoothScroll = <span class="function"><span class="params">element</span> =&gt;</span></span><br><span class="line">    <span class="built_in">document</span>.querySelector(element).scrollIntoView...</span></pre></td></tr></table></figure>
             
-            <span class="read-more"><a href="/2020/03/17/2020-3-17-mixin-class-in-js/" title="Read article" class="posttitle">Read article</a>
+            <span class="read-more"><a href="/2020/03/28/2020-3-28-tool-functions/" title="Read article" class="posttitle">Read article</a>
                 <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
@@ -207,43 +202,34 @@
                   <b>「 </b>JAVASCRIPT<b> 」</b>
                 </a>
             
-            March 17, 2020
+            March 28, 2020
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/03/17/2020-3-17-mixin-class-in-js/" title="混合对象-类" class="posttitle">混合对象-类</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/28/2020-3-28-tool-functions/" title="Tool functions" class="posttitle">Tool functions</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        10k
+                        18k
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        9 mins.
+                        17 mins.
                     </span>
                 
                 
             </p>
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
             
         
         <div class="md-content animated fadeIn">
             
-                <ul>
-<li>类是一种设计模式, JavaScript 中可以用一些方法实现类的功能</li>
-<li>类意味着复制</li>
-<li>传统的类被实例化时, 它的行为会被复制到实例中.</li>
-<li>类被继承时, 行为也会被复制到子类中</li>
-<li>多态看起来似乎是从子类引用父类, 但本质上引用的其实是复制的结果</li>
-<li>JavaScript 的对象机制不会自动执行复制行为, 即 JavaScript 中只有对象, 不存在可以被实例化的”类”, 一个对象不会被复制到其他对象, 它们会被关联起来</li>
-<li>混入(mixin): 模拟类的复制行为, 但会让代码难以读懂且难以维护</li>
-</ul>
-<h3 id="显式混入"><a href="#显式混入" class="headerlink" title="显式混入"></a>显式混入...</h3>
+                <h3 id="Smooth-scrolling"><a href="#Smooth-scrolling" class="headerlink" title="Smooth scrolling"></a>Smooth scrolling</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> smoothScroll = <span class="function"><span class="params">element</span> =&gt;</span></span><br><span class="line">    <span class="built_in">document</span>.querySelector(element).scrollIntoView(&#123;</span><br><span class="line">        behavior: <span class="string">'smooth'</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">smoothScroll(<span class="string">'#fooBar'</span>); <span class="comment">// scrolls smoothly to the element with the id fooBar</span></span><br><span class="line">smoothScroll(<span class="string">'.fooBar'</span>); <span class="comment">// scrolls...</span></span></pre></td></tr></table></figure>
             
-            <span class="read-more"><a href="/2020/03/17/2020-3-17-mixin-class-in-js/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+            <span class="read-more"><a href="/2020/03/28/2020-3-28-tool-functions/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
@@ -262,52 +248,34 @@
                   <b>「 </b>JAVASCRIPT<b> 」</b>
                 </a>
             
-            March 17, 2020
+            March 23, 2020
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/03/17/2020-3-17-object/" title="Object in JavaScript" class="posttitle">Object in JavaScript</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/23/2020-3-23-Mastering-The-Developer-Tools-Console/" title="Mastering The Developer Tools Console" class="posttitle">Mastering The Developer Tools Console</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        33k
+                        30k
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        30 mins.
+                        27 mins.
                     </span>
                 
                 
             </p>
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Chrome/" rel="tag">Chrome</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Debug/" rel="tag">Debug</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
             
         
         <div class="md-content animated fadeIn">
             
-                <ul>
-<li>声明(文字)形式</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = &#123;</span><br><span class="line">    key: value,</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>构造形式</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">myObj.key = value;</span><br></pre></td></tr></table></figure>
-<h3 id="JavaScript基础类型"><a href="#JavaScript基础类型" class="headerlink" title="JavaScript基础类型"></a>JavaScript基础类型</h3><ol>
-<li><code>string</code></li>
-<li><code>number</code></li>
-<li><code>boolean</code></li>
-<li><code>null</code></li>
-<li><code>undefined</code></li>
-<li><code>object</code></li>
-</ol>
-<blockquote>
-<p>简单基本类型<code>(string, number, boolean, null, undefined)</code>本身并不是对象, 但是<code>typeof null</code>会返回<code>object...</code></p></blockquote>
+                <p>The developer tools console is one of the most powerful tools available to you when it comes to debugging your front-end web applications. The console has an API that provides a number of methods that make debugging easier. It’s not uncommon to see developers...</p>
             
-            <span class="read-more"><a href="/2020/03/17/2020-3-17-object/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+            <span class="read-more"><a href="/2020/03/23/2020-3-23-Mastering-The-Developer-Tools-Console/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
@@ -326,40 +294,38 @@
                   <b>「 </b>JAVASCRIPT<b> 」</b>
                 </a>
             
-            March 14, 2020
+            March 23, 2020
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/03/14/2020-3-14-closure-in-javascript/" title="Closure in JavaScript" class="posttitle">Closure in JavaScript</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/23/2020-3-23-always/" title="Returns a function that always returns the given value." class="posttitle">Returns a function that always returns the given value.</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        17k
+                        870
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        16 mins.
+                        1 mins.
                     </span>
                 
                 
             </p>
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ramda/" rel="tag">Ramda</a></li></ul>
             
         
         <div class="md-content animated fadeIn">
             
-                <blockquote>
-<p>当函数可以记住并访问所在的词法作用域, 即使函数是在当前词法作用域之外执行, 这时就产生了<em>闭包</em></p>
+                <h3 id="always"><a href="#always" class="headerlink" title="always"></a>always</h3><blockquote>
+<p>a → (* → a)</p>
 </blockquote>
-<blockquote>
-<p>JavaScript中闭包无处不在, 只需要能够识别并拥抱它.</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> bar; <span class="comment">//将bar引用的函数对象本身当作返回值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> baz = foo();</span><br><span class="line"></span><br><span class="line">baz(); <span class="comment">//2 --这就...</span></span></pre></td></tr></table></figure>
+<p>Returns a function that always returns the given value. Note that for non-primitives the value returned is a reference to the original value.</p>
+<p>This function is known as const, constant, or <code>K (for K combinator)</code> in other languages and...</p>
             
-            <span class="read-more"><a href="/2020/03/14/2020-3-14-closure-in-javascript/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+            <span class="read-more"><a href="/2020/03/23/2020-3-23-always/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
@@ -378,44 +344,38 @@
                   <b>「 </b>JAVASCRIPT<b> 」</b>
                 </a>
             
-            March 13, 2020
+            March 22, 2020
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/03/13/2020-3-13-scope-of-javascript/" title="Javascript作用域" class="posttitle">Javascript作用域</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/22/2020-3-22-allPass/" title="Returns true for a given list of arguments if every one of the provided predicates is satisfied by those arguments" class="posttitle">Returns true for a given list of arguments if every one of the provided predicates is satisfied by those arguments</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        9.7k
+                        1.7k
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        9 mins.
+                        2 mins.
                     </span>
                 
                 
             </p>
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ramda/" rel="tag">Ramda</a></li></ul>
             
         
         <div class="md-content animated fadeIn">
             
-                <blockquote>
-<p>JavaScript 是一门编译语言, 编译就发生在执行前几微秒(甚至更短!)</p>
+                <h3 id="allPass"><a href="#allPass" class="headerlink" title="allPass"></a>allPass</h3><blockquote>
+<p>[(<em>… → Boolean)] → (</em>… → Boolean)</p>
 </blockquote>
-<ol>
-<li>分词/词法分析</li>
-<li>解析/语法分析</li>
-<li>代码生成</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">LHS:在当前作用域声明变量--&gt;RHS:在作用域中查找该变量并赋值</span><br></pre></td></tr></table></figure>
-<p>在当前作用域无法找到某个变量时, 引擎就会在外层嵌套的作用域中继续查找, 直到找到该变量, 或者抵达最外层的作用域(即全局作用域)为止 (从内到外查找)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = ...</span></pre></td></tr></table></figure>
+<p>Takes a list of predicates and returns a predicate that returns true for a given list of arguments if every one of the provided predicates is satisfied by those arguments.</p>
+<p>The function returned is a curried function...</p>
             
-            <span class="read-more"><a href="/2020/03/13/2020-3-13-scope-of-javascript/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+            <span class="read-more"><a href="/2020/03/22/2020-3-22-allPass/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>
@@ -434,46 +394,39 @@
                   <b>「 </b>JAVASCRIPT<b> 」</b>
                 </a>
             
-            March 13, 2020
+            March 21, 2020
         </p>
-        <h3 class="post-title animated fadeInDown"><a href="/2020/03/13/2020-3-13-about-this-in-javascript/" title="About this in Javascript" class="posttitle">About this in Javascript</a></h3>
+        <h3 class="post-title animated fadeInDown"><a href="/2020/03/21/2020-3-21-all/" title="Returns true if all elements of the list match the predicate, false if there are any that don&#39;t" class="posttitle">Returns true if all elements of the list match the predicate, false if there are any that don&#39;t</a></h3>
         
             <p class="post-count animated fadeInDown">
                 
                     <span>
                         <b class="iconfont icon-text2"></b> <i>Words count</i>
-                        26k
+                        1.3k
                     </span>
                 
                 
                     <span>
                         <b class="iconfont icon-timer__s"></b> <i>Reading time</i>
-                        23 mins.
+                        1 mins.
                     </span>
                 
                 
             </p>
             
-                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">基础知识</a></li></ul>
+                <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Ramda/" rel="tag">Ramda</a></li></ul>
             
         
         <div class="md-content animated fadeIn">
             
-                <blockquote>
-<h4 id="this提供了一种优雅的方式来隐式”传递”对象引用-有助于将API设计的更加简洁且易于复用"><a href="#this提供了一种优雅的方式来隐式”传递”对象引用-有助于将API设计的更加简洁且易于复用" class="headerlink" title="this提供了一种优雅的方式来隐式”传递”对象引用, 有助于将API设计的更加简洁且易于复用"></a>this提供了一种优雅的方式来隐式”传递”对象引用, 有助于将API设计的更加简洁且易于复用</h4></blockquote>
-<h4 id="1-What-is-”this”"><a href="#1-What-is-”this”" class="headerlink" title="1. What is *”this”* ?"></a>1. What is *”this”* ?</h4><ul>
-<li>当函数被调用时,会创建一个活动记录(执行上下文), 这个记录包含函数在哪里被调用(调用栈),调用方式, 传入的参数等信息. this就是这个记录的一个属性.</li>
-<li>this实际上就是在函数<em>调用时发生的绑定</em>, 它指向什么完全取决于函数<em>在哪里被调用</em></li>
-</ul>
-<h4 id="2-绑定规则"><a href="#2-绑定规则" class="headerlink" title="2. 绑定规则"></a>2. 绑定规则</h4><ol>
-<li>默认绑定</li>
-</ol>
-<ul>
-<li>foo()直接调用时, 只能使用默认绑定, this指向全局对象;</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function...</span></span></span></pre></td></tr></table></figure>
+                <h3 id="all"><a href="#all" class="headerlink" title="all"></a>all</h3><blockquote>
+<p>(a → Boolean) → [a] → Boolean</p>
+</blockquote>
+<p>Returns <code>true</code> if all elements of the list match the predicate, <code>false</code> if there are any that don’t.</p>
+<p>Dispatches to the all method of the second argument, if present.</p>
+<p>Acts as a transducer if a transformer is given in list...</p>
             
-            <span class="read-more"><a href="/2020/03/13/2020-3-13-about-this-in-javascript/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
+            <span class="read-more"><a href="/2020/03/21/2020-3-21-all/" title="Read article" class="posttitle">Read article</a> <b class="iconfont icon-arrow-right- gradient-text"></b></span>
         </div>
     </div>
 </div>

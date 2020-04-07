@@ -4,6 +4,238 @@
   
     
     <entry>
+      <title>The purpose of JavaScript UI libraries/frameworks</title>
+      <link href="/2020/04/07/2020-4-7-ui-library-framework-purpose/"/>
+      <url>/2020/04/07/2020-4-7-ui-library-framework-purpose/</url>
+      
+        <content type="html"><![CDATA[<h3 id="What-is-the-purpose-of-JavaScript-UI-libraries-frameworks-like-React-Vue-Angular-Hyperapp-etc"><a href="#What-is-the-purpose-of-JavaScript-UI-libraries-frameworks-like-React-Vue-Angular-Hyperapp-etc" class="headerlink" title="What is the purpose of JavaScript UI libraries/frameworks like React, Vue, Angular, Hyperapp, etc?"></a>What is the purpose of JavaScript UI libraries/frameworks like React, Vue, Angular, Hyperapp, etc?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>The main purpose is to avoid manipulating the DOM directly and keep the state of an application<br>in sync with the UI easily. Additionally, they provide the ability to create components that can be reused when they have similar functionality with minor differences, avoiding duplication which would require multiple changes whenever the structure of a component which is reused in multiple places needs to be updated.</p><p>When working with DOM manipulation libraries like jQuery, the data of an application is generally kept in the DOM itself, often as class names or <code>data</code> attributes. Manipulating the DOM to update the UI involves many extra steps and can introduce subtle bugs over time. Keeping the state separate and letting a framework handle the UI updates when the state changes reduces cognitive load. Saying you want the UI to look a certain way when the state is a certain value is the declarative way of creating an application, instead of the imperative way of manually updating the UI to reflect the new state.</p><h4 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h4><ul><li>The virtual DOM is a representation of the real DOM tree in the form of plain objects, which allows a library to write code as if the entire document is thrown away and rebuilt on each change, while the real DOM only updates what needs to be changed. Comparing the new virtual DOM against the previous one leads to high efficiency as changing real DOM nodes is costly compared to recalculating the virtual DOM.</li><li>JSX is an extension to JavaScript that provides XML-like syntax to create virtual DOM objects which is transformed to function calls by a transpiler. It simplifies control flow (if statements/ternary expressions) compared to tagged template literals.</li></ul><h5 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h5><ul><li><a href="https://github.com/hyperapp/hyperapp#view" target="_blank" rel="noopener">Virtual DOM in Hyperapp</a></li></ul><!-- tags: (javascript) --><!-- expertise: (2) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>virtual DOM</title>
+      <link href="/2020/04/06/2020-4-6-virtual-dom/"/>
+      <url>/2020/04/06/2020-4-6-virtual-dom/</url>
+      
+        <content type="html"><![CDATA[<h3 id="What-is-a-virtual-DOM-and-why-is-it-used-in-libraries-frameworks"><a href="#What-is-a-virtual-DOM-and-why-is-it-used-in-libraries-frameworks" class="headerlink" title="What is a virtual DOM and why is it used in libraries/frameworks?"></a>What is a virtual DOM and why is it used in libraries/frameworks?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>The virtual DOM (VDOM) is a representation of the real DOM in the form of plain JavaScript objects. These objects have properties to describe the real DOM nodes they represent: the node name, its attributes, and child nodes.</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"counter"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>0<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p>The above markup’s virtual DOM representation might look like this:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  nodeName: <span class="string">"div"</span>,</span><br><span class="line">  attributes: &#123; <span class="attr">class</span>: <span class="string">"counter"</span> &#125;,</span><br><span class="line">  children: [</span><br><span class="line">    &#123;</span><br><span class="line">      nodeName: <span class="string">"h1"</span>,</span><br><span class="line">      attributes: &#123;&#125;,</span><br><span class="line">      children: [<span class="number">0</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      nodeName: <span class="string">"button"</span>,</span><br><span class="line">      attributes: &#123;&#125;,</span><br><span class="line">      children: [<span class="string">"-"</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      nodeName: <span class="string">"button"</span>,</span><br><span class="line">      attributes: &#123;&#125;,</span><br><span class="line">      children: [<span class="string">"+"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>The library/framework uses the virtual DOM as a means to improve performance. When the state of an application changes, the real DOM needs to be updated to reflect it. However, changing real DOM nodes is costly compared to recalculating the virtual DOM. The previous virtual DOM can be compared to the new virtual DOM very quickly in comparison.</p><p>Once the changes between the old VDOM and new VDOM have been calculated by the diffing engine of the framework, the real DOM can be patched efficiently in the least time possible to match the new state of the application.</p><h4 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h4><ul><li>Why accessing the DOM can be so costly.</li></ul><h5 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h5><!-- Whenever possible, link a more detailed explanation. --><ul><li><a href="http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/" target="_blank" rel="noopener">The difference between Virtual DOM and DOM</a></li></ul><!-- tags: (javascript) --><!-- expertise: (2) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>var, let and const</title>
+      <link href="/2020/04/05/2020-4-5-var-let-const/"/>
+      <url>/2020/04/05/2020-4-5-var-let-const/</url>
+      
+        <content type="html"><![CDATA[<h3 id="What-are-the-differences-between-var-let-const-and-no-keyword-statements"><a href="#What-are-the-differences-between-var-let-const-and-no-keyword-statements" class="headerlink" title="What are the differences between var, let, const and no keyword statements?"></a>What are the differences between <code>var</code>, <code>let</code>, <code>const</code> and no keyword statements?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><h5 id="No-keyword"><a href="#No-keyword" class="headerlink" title="No keyword"></a>No keyword</h5><p>When no keyword exists before a variable assignment, it is either assigning a global variable if one does not exist, or reassigns an already declared variable. In non-strict mode, if the variable has not yet been declared, it will assign the variable as a property of the global object (<code>window</code> in browsers). In strict mode, it will throw an error to prevent unwanted global variables from being created.</p><h5 id="var"><a href="#var" class="headerlink" title="var"></a>var</h5><p><code>var</code> was the default statement to declare a variable until ES2015. It creates a function-scoped variable that can be reassigned and redeclared. However, due to its lack of block scoping, it can cause issues if the variable is being reused in a loop that contains an asynchronous callback because the variable will continue to exist outside of the block scope.</p><p>Below, by the time the the <code>setTimeout</code> callback executes, the loop has already finished and the <code>i</code> variable is <code>10</code>, so all ten callbacks reference the same variable available in the function scope.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// logs `10` ten times</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Solutions with `var` */</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="comment">// Passed as an argument will use the value as-is in</span></span><br><span class="line">  <span class="comment">// that point in time</span></span><br><span class="line">  setTimeout(<span class="built_in">console</span>.log, <span class="number">0</span>, i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="comment">// Create a new function scope that will use the value</span></span><br><span class="line">  <span class="comment">// as-is in that point in time</span></span><br><span class="line">  ;(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="let"><a href="#let" class="headerlink" title="let"></a>let</h5><p><code>let</code> was introduced in ES2015 and is the new preferred way to declare variables that will be reassigned later. Trying to redeclare a variable again will throw an error. It is block-scoped so that using it in a loop will keep it scoped to the iteration.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// logs 0, 1, 2, 3, ...</span></span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="const"><a href="#const" class="headerlink" title="const"></a>const</h5><p><code>const</code> was introduced in ES2015 and is the new preferred default way to declare all variables if they won’t be reassigned later, even for objects that will be mutated (as long as the reference to the object does not change). It is block-scoped and cannot be reassigned.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myObject = &#123;&#125;</span><br><span class="line">myObject.prop = <span class="string">"hello!"</span> <span class="comment">// No error</span></span><br><span class="line">myObject = <span class="string">"hello"</span> <span class="comment">// Error</span></span><br></pre></td></tr></table></figure><h4 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h4><ul><li>All declarations are hoisted to the top of their scope.</li><li>However, with <code>let</code> and <code>const</code> there is a concept called the temporal dead zone (TDZ). While the declarations are still hoisted, there is a period between entering scope and being declared where they cannot be accessed.</li><li>Show a common issue with using <code>var</code> and how <code>let</code> can solve it, as well as a solution that keeps <code>var</code>.</li><li><code>var</code> should be avoided whenever possible and prefer <code>const</code> as the default declaration statement for all variables unless they will be reassigned later, then use <code>let</code> if so.</li></ul><h5 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h5><ul><li><a href="https://wesbos.com/let-vs-const/" target="_blank" rel="noopener"><code>let</code> vs <code>const</code></a></li></ul><!-- tags: (javascript) --><!-- expertise: (1) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>use strict in JavaScript</title>
+      <link href="/2020/04/04/2020-4-4-use-strict/"/>
+      <url>/2020/04/04/2020-4-4-use-strict/</url>
+      
+        <content type="html"><![CDATA[<h3 id="What-does-39-use-strict-39-do-and-what-are-some-of-the-key-benefits-to-using-it"><a href="#What-does-39-use-strict-39-do-and-what-are-some-of-the-key-benefits-to-using-it" class="headerlink" title="What does &#39;use strict&#39; do and what are some of the key benefits to using it?"></a>What does <code>&#39;use strict&#39;</code> do and what are some of the key benefits to using it?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>Including <code>&#39;use strict&#39;</code> at the beginning of your JavaScript source file enables strict mode, which enforces more strict parsing and error handling of JavaScript code. It is considered a good practice and offers a lot of benefits, such as:</p><ul><li>Easier debugging due to eliminating silent errors.</li><li>Disallows variable redefinition.</li><li>Prevents accidental global variables.</li><li>Oftentimes provides increased performance over identical code that is not running in strict mode.</li><li>Simplifies <code>eval()</code> and <code>arguments</code>.</li><li>Helps make JavaScript more secure.</li></ul><h4 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h4><ul><li>Eliminates <code>this</code> coercion, throwing an error when <code>this</code> references a value of <code>null</code> or <code>undefined</code>.</li><li>Throws an error on invalid usage of <code>delete</code>.</li><li>Prohibits some syntax likely to be defined in future versions of ECMAScript</li></ul><h5 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h5><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">MDN docs for strict mode</a></li></ul><!-- tags: (javascript) --><!-- expertise: (2) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The typeof typeof</title>
+      <link href="/2020/04/03/2020-4-3-typeof-typeof/"/>
+      <url>/2020/04/03/2020-4-3-typeof-typeof/</url>
+      
+        <content type="html"><![CDATA[<h3 id="What-does-the-following-code-evaluate-to"><a href="#What-does-the-following-code-evaluate-to" class="headerlink" title="What does the following code evaluate to?"></a>What does the following code evaluate to?</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="keyword">typeof</span> <span class="number">0</span></span><br></pre></td></tr></table></figure><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>It evaluates to <code>&quot;string&quot;</code>.</p><p><code>typeof 0</code> evaluates to the string <code>&quot;number&quot;</code> and therefore <code>typeof &quot;number&quot;</code> evaluates to <code>&quot;string&quot;</code>.</p><h4 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h4><h5 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h5><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank" rel="noopener">MDN docs for typeof</a></li></ul><!-- tags: (javascript) --><!-- expertise: (1) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript data types</title>
+      <link href="/2020/04/02/2020-4-2-types/"/>
+      <url>/2020/04/02/2020-4-2-types/</url>
+      
+        <content type="html"><![CDATA[<h3 id="What-are-JavaScript-data-types"><a href="#What-are-JavaScript-data-types" class="headerlink" title="What are JavaScript data types?"></a>What are JavaScript data types?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>The latest ECMAScript standard defines seven data types, six of them being primitive: <code>Boolean</code>, <code>Null</code>, <code>Undefined</code>, <code>Number</code>, <code>String</code>, <code>Symbol</code> and one non-primitive data type: <code>Object</code>.</p><h4 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h4><ul><li>Mention of newly added <code>Symbol</code> data type</li><li><code>Array</code>, <code>Date</code> and <code>function</code> are all of type <code>object</code></li><li>Functions in JavaScript are objects with the capability of being callable</li></ul><h5 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h5><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank" rel="noopener">MDN docs for data types and data structures</a></li><li><a href="https://www.digitalocean.com/community/tutorials/understanding-data-types-in-javascript" target="_blank" rel="noopener">Understanding Data Types in JavaScript</a></li></ul><!-- tags: (javascript) --><!-- expertise: (1) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>this in JavaScript</title>
+      <link href="/2020/04/01/2020-4-1-this/"/>
+      <url>/2020/04/01/2020-4-1-this/</url>
+      
+        <content type="html"><![CDATA[<h3 id="What-is-the-this-keyword-and-how-does-it-work"><a href="#What-is-the-this-keyword-and-how-does-it-work" class="headerlink" title="What is the this keyword and how does it work?"></a>What is the <code>this</code> keyword and how does it work?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>The <code>this</code> keyword is an object that represents the context of an executing function. Regular functions can have their <code>this</code> value changed with the methods <code>call()</code>, <code>apply()</code> and <code>bind()</code>. Arrow functions implicitly bind <code>this</code> so that it refers to the context of its lexical environment, regardless of whether or not its context is set explicitly with <code>call()</code>.</p><p>Here are some common examples of how <code>this</code> works:</p><h5 id="Object-literals"><a href="#Object-literals" class="headerlink" title="Object literals"></a>Object literals</h5><p><code>this</code> refers to the object itself inside regular functions if the object precedes the invocation of the function.</p><p>Properties set as <code>this</code> do not refer to the object.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = &#123;</span><br><span class="line">  property: <span class="keyword">this</span>,</span><br><span class="line">  regularFunction: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">  &#125;,</span><br><span class="line">  arrowFunction: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">  &#125;,</span><br><span class="line">  iife: (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">myObject.regularFunction() <span class="comment">// myObject</span></span><br><span class="line">myObject[<span class="string">"regularFunction"</span>]() <span class="comment">// my Object</span></span><br><span class="line"></span><br><span class="line">myObject.property <span class="comment">// NOT myObject; lexical `this`</span></span><br><span class="line">myObject.arrowFunction() <span class="comment">// NOT myObject; lexical `this`</span></span><br><span class="line">myObject.iife <span class="comment">// NOT myObject; lexical `this`</span></span><br><span class="line"><span class="keyword">const</span> regularFunction = myObject.regularFunction</span><br><span class="line">regularFunction() <span class="comment">// NOT myObject; lexical `this`</span></span><br></pre></td></tr></table></figure><h5 id="Event-listeners"><a href="#Event-listeners" class="headerlink" title="Event listeners"></a>Event listeners</h5><p><code>this</code> refers to the element listening to the event.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// document.body</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h5 id="Constructors"><a href="#Constructors" class="headerlink" title="Constructors"></a>Constructors</h5><p><code>this</code> refers to the newly created object.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// myExample</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> myExample = <span class="keyword">new</span> Example()</span><br></pre></td></tr></table></figure><h5 id="Manual"><a href="#Manual" class="headerlink" title="Manual"></a>Manual</h5><p>With <code>call()</code> and <code>apply()</code>, <code>this</code> refers to the object passed as the first argument.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myFunction = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">&#125;</span><br><span class="line">myFunction.call(&#123; <span class="attr">customThis</span>: <span class="literal">true</span> &#125;) <span class="comment">// &#123; customThis: true &#125;</span></span><br></pre></td></tr></table></figure><h5 id="Unwanted-this"><a href="#Unwanted-this" class="headerlink" title="Unwanted this"></a>Unwanted <code>this</code></h5><p>Because <code>this</code> can change depending on the scope, it can have unexpected values when using regular functions.</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  arr: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">  doubleArr() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.arr.map(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// this is now this.arr</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.double(value)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  double() &#123;</span><br><span class="line">    <span class="keyword">return</span> value * <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.doubleArr() <span class="comment">// Uncaught TypeError: this.double is not a function</span></span><br></pre></td></tr></table></figure><h4 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h4><ul><li>In non-strict mode, global <code>this</code> is the global object (<code>window</code> in browsers), while in strict mode global <code>this</code> is <code>undefined</code>.</li><li><code>Function.prototype.call</code> and <code>Function.prototype.apply</code> set the <code>this</code> context of an executing function as the first argument, with <code>call</code> accepting a variadic number of arguments thereafter, and <code>apply</code> accepting an array as the second argument which are fed to the function in a variadic manner.</li><li><code>Function.prototype.bind</code> returns a new function that enforces the <code>this</code> context as the first argument which cannot be changed by other functions.</li><li>If a function requires its <code>this</code> context to be changed based on how it is called, you must use the <code>function</code> keyword. Use arrow functions when you want <code>this</code> to be the surrounding (lexical) context.</li></ul><h5 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h5><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="noopener"><code>this</code> on MDN</a></li></ul><!-- tags: (javascript) --><!-- expertise: (2) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Compare two objects in JavaScript</title>
+      <link href="/2020/03/31/2020-3-31-xss/"/>
+      <url>/2020/03/31/2020-3-31-xss/</url>
+      
+        <content type="html"><![CDATA[<h3 id="What-is-a-cross-site-scripting-attack-XSS-and-how-do-you-prevent-it"><a href="#What-is-a-cross-site-scripting-attack-XSS-and-how-do-you-prevent-it" class="headerlink" title="What is a cross-site scripting attack (XSS) and how do you prevent it?"></a>What is a cross-site scripting attack (XSS) and how do you prevent it?</h3><h4 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h4><p>XSS refers to client-side code injection where the attacker injects malicious scripts into a legitimate website or web application. This is often achieved when the application does not validate user input and freely injects dynamic HTML content.</p><p>For example, a comment system will be at risk if it does not validate or escape user input. If the comment contains unescaped HTML, the comment can inject a <code>&lt;script&gt;</code> tag into the website that other users will execute against their knowledge.</p><ul><li>The malicious script has access to cookies which are often used to store session tokens. If an attacker can obtain a user’s session cookie, they can impersonate the user.</li><li>The script can arbitrarily manipulate the DOM of the page the script is executing in, allowing the attacker to insert pieces of content that appear to be a real part of the website.</li><li>The script can use AJAX to send HTTP requests with arbitrary content to arbitrary destinations.</li></ul><h4 id="Good-to-hear"><a href="#Good-to-hear" class="headerlink" title="Good to hear"></a>Good to hear</h4><ul><li>On the client, using <code>textContent</code> instead of <code>innerHTML</code> prevents the browser from running the string through the HTML parser which would execute scripts in it.</li><li>On the server, escaping HTML tags will prevent the browser from parsing the user input as actual HTML and therefore won’t execute the script.</li></ul><h5 id="Additional-links"><a href="#Additional-links" class="headerlink" title="Additional links"></a>Additional links</h5><!-- Whenever possible, link a more detailed explanation. --><ul><li><a href="https://www.acunetix.com/websitesecurity/cross-site-scripting/" target="_blank" rel="noopener">Cross-Site Scripting Attack (XSS)</a></li></ul><!-- tags: (security,javascript) --><!-- expertise: (1) -->]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Browser or Node?</title>
       <link href="/2020/03/30/2020-3-30-tool-functions%20-%20Copy/"/>
       <url>/2020/03/30/2020-3-30-tool-functions%20-%20Copy/</url>
@@ -1089,9 +1321,9 @@
             
             <tag> 前端 </tag>
             
-            <tag> Flv.js </tag>
-            
             <tag> Video </tag>
+            
+            <tag> Flv.js </tag>
             
         </tags>
       
